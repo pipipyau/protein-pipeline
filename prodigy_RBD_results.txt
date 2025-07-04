@@ -1,0 +1,650 @@
+[+] Parsed structure file RBD_RSB_6LZG_unrelaxed_rank_002_alphafold2_ptm_model_3_seed_000.pdb-6lzg-A_1_upd.pdb-complex (2 chains, 239 residues)
+[+] No. of intermolecular contacts: 84
+[+] No. of charged-charged contacts: 0.0
+[+] No. of charged-polar contacts: 5.0
+[+] No. of charged-apolar contacts: 16.0
+[+] No. of polar-polar contacts: 3.0
+[+] No. of apolar-polar contacts: 14.0
+[+] No. of apolar-apolar contacts: 46.0
+[+] Percentage of apolar NIS residues: 45.50
+[+] Percentage of charged NIS residues: 17.50
+[++] Predicted binding affinity (kcal.mol-1):     -9.2
+[++] Predicted dissociation constant (M) at 25.0˚C:  1.7e-07
+
+[+] Parsed structure file RBD_RSB_6LZG_unrelaxed_rank_005_alphafold2_ptm_model_1_seed_000.pdb-6lzg-A_7_upd.pdb-complex (2 chains, 237 residues)
+[+] No. of intermolecular contacts: 116
+[+] No. of charged-charged contacts: 4.0
+[+] No. of charged-polar contacts: 9.0
+[+] No. of charged-apolar contacts: 31.0
+[+] No. of polar-polar contacts: 2.0
+[+] No. of apolar-polar contacts: 20.0
+[+] No. of apolar-apolar contacts: 50.0
+[+] Percentage of apolar NIS residues: 44.33
+[+] Percentage of charged NIS residues: 17.53
+[++] Predicted binding affinity (kcal.mol-1):    -12.9
+[++] Predicted dissociation constant (M) at 25.0˚C:  3.7e-10
+
+[+] Parsed structure file RBD_RSB_6LZG_unrelaxed_rank_004_alphafold2_ptm_model_2_seed_000.pdb-6lzg-A_1_upd.pdb-complex (2 chains, 239 residues)
+[+] No. of intermolecular contacts: 59
+[+] No. of charged-charged contacts: 1.0
+[+] No. of charged-polar contacts: 2.0
+[+] No. of charged-apolar contacts: 18.0
+[+] No. of polar-polar contacts: 1.0
+[+] No. of apolar-polar contacts: 4.0
+[+] No. of apolar-apolar contacts: 33.0
+[+] Percentage of apolar NIS residues: 45.41
+[+] Percentage of charged NIS residues: 17.86
+[++] Predicted binding affinity (kcal.mol-1):     -7.6
+[++] Predicted dissociation constant (M) at 25.0˚C:  2.7e-06
+
+[+] Parsed structure file RBD_RSB_6LZG_unrelaxed_rank_003_alphafold2_ptm_model_5_seed_000.pdb-6lzg-A_2_upd.pdb-complex (2 chains, 239 residues)
+[+] No. of intermolecular contacts: 66
+[+] No. of charged-charged contacts: 0.0
+[+] No. of charged-polar contacts: 0.0
+[+] No. of charged-apolar contacts: 8.0
+[+] No. of polar-polar contacts: 0.0
+[+] No. of apolar-polar contacts: 11.0
+[+] No. of apolar-apolar contacts: 47.0
+[+] Percentage of apolar NIS residues: 44.67
+[+] Percentage of charged NIS residues: 18.27
+[++] Predicted binding affinity (kcal.mol-1):     -8.4
+[++] Predicted dissociation constant (M) at 25.0˚C:  7.3e-07
+
+[+] Parsed structure file RBD_RSB_6LZG_unrelaxed_rank_004_alphafold2_ptm_model_2_seed_000.pdb-6lzg-A_6_upd.pdb-complex (2 chains, 237 residues)
+[+] No. of intermolecular contacts: 70
+[+] No. of charged-charged contacts: 2.0
+[+] No. of charged-polar contacts: 1.0
+[+] No. of charged-apolar contacts: 27.0
+[+] No. of polar-polar contacts: 0.0
+[+] No. of apolar-polar contacts: 7.0
+[+] No. of apolar-apolar contacts: 33.0
+[+] Percentage of apolar NIS residues: 43.75
+[+] Percentage of charged NIS residues: 18.75
+[++] Predicted binding affinity (kcal.mol-1):     -9.7
+[++] Predicted dissociation constant (M) at 25.0˚C:  8.2e-08
+
+[+] Parsed structure file RBD_RSB_6LZG_unrelaxed_rank_001_alphafold2_ptm_model_4_seed_000.pdb-6lzg-A_5_upd.pdb-complex (2 chains, 239 residues)
+[+] No. of intermolecular contacts: 70
+[+] No. of charged-charged contacts: 3.0
+[+] No. of charged-polar contacts: 1.0
+[+] No. of charged-apolar contacts: 25.0
+[+] No. of polar-polar contacts: 1.0
+[+] No. of apolar-polar contacts: 11.0
+[+] No. of apolar-apolar contacts: 29.0
+[+] Percentage of apolar NIS residues: 44.56
+[+] Percentage of charged NIS residues: 17.62
+[++] Predicted binding affinity (kcal.mol-1):    -10.3
+[++] Predicted dissociation constant (M) at 25.0˚C:  2.9e-08
+
+[+] Parsed structure file RBD_RSB_6LZG_unrelaxed_rank_001_alphafold2_ptm_model_4_seed_000.pdb-6lzg-A_3_upd.pdb-complex (2 chains, 236 residues)
+[+] No. of intermolecular contacts: 56
+[+] No. of charged-charged contacts: 4.0
+[+] No. of charged-polar contacts: 6.0
+[+] No. of charged-apolar contacts: 26.0
+[+] No. of polar-polar contacts: 0.0
+[+] No. of apolar-polar contacts: 4.0
+[+] No. of apolar-apolar contacts: 16.0
+[+] Percentage of apolar NIS residues: 45.60
+[+] Percentage of charged NIS residues: 16.58
+[++] Predicted binding affinity (kcal.mol-1):     -9.0
+[++] Predicted dissociation constant (M) at 25.0˚C:  2.4e-07
+
+[+] Parsed structure file RBD_RSB_6LZG_unrelaxed_rank_003_alphafold2_ptm_model_5_seed_000.pdb-6lzg-A_8_upd.pdb-complex (2 chains, 237 residues)
+[+] No. of intermolecular contacts: 82
+[+] No. of charged-charged contacts: 1.0
+[+] No. of charged-polar contacts: 1.0
+[+] No. of charged-apolar contacts: 20.0
+[+] No. of polar-polar contacts: 0.0
+[+] No. of apolar-polar contacts: 23.0
+[+] No. of apolar-apolar contacts: 37.0
+[+] Percentage of apolar NIS residues: 42.93
+[+] Percentage of charged NIS residues: 18.85
+[++] Predicted binding affinity (kcal.mol-1):    -12.6
+[++] Predicted dissociation constant (M) at 25.0˚C:  5.4e-10
+
+[+] Parsed structure file RBD_RSB_6LZG_unrelaxed_rank_004_alphafold2_ptm_model_2_seed_000.pdb-6lzg-A_8_upd.pdb-complex (2 chains, 237 residues)
+[+] No. of intermolecular contacts: 71
+[+] No. of charged-charged contacts: 3.0
+[+] No. of charged-polar contacts: 2.0
+[+] No. of charged-apolar contacts: 19.0
+[+] No. of polar-polar contacts: 0.0
+[+] No. of apolar-polar contacts: 9.0
+[+] No. of apolar-apolar contacts: 38.0
+[+] Percentage of apolar NIS residues: 43.81
+[+] Percentage of charged NIS residues: 18.56
+[++] Predicted binding affinity (kcal.mol-1):     -9.4
+[++] Predicted dissociation constant (M) at 25.0˚C:  1.2e-07
+
+[+] Parsed structure file RBD_RSB_6LZG_unrelaxed_rank_002_alphafold2_ptm_model_3_seed_000.pdb-6lzg-A_2_upd.pdb-complex (2 chains, 239 residues)
+[+] No. of intermolecular contacts: 83
+[+] No. of charged-charged contacts: 1.0
+[+] No. of charged-polar contacts: 4.0
+[+] No. of charged-apolar contacts: 20.0
+[+] No. of polar-polar contacts: 0.0
+[+] No. of apolar-polar contacts: 12.0
+[+] No. of apolar-apolar contacts: 46.0
+[+] Percentage of apolar NIS residues: 45.00
+[+] Percentage of charged NIS residues: 17.00
+[++] Predicted binding affinity (kcal.mol-1):    -10.0
+[++] Predicted dissociation constant (M) at 25.0˚C:  4.6e-08
+
+[+] Parsed structure file RBD_RSB_6LZG_unrelaxed_rank_004_alphafold2_ptm_model_2_seed_000.pdb-6lzg-A_2_upd.pdb-complex (2 chains, 239 residues)
+[+] No. of intermolecular contacts: 78
+[+] No. of charged-charged contacts: 0.0
+[+] No. of charged-polar contacts: 2.0
+[+] No. of charged-apolar contacts: 27.0
+[+] No. of polar-polar contacts: 2.0
+[+] No. of apolar-polar contacts: 16.0
+[+] No. of apolar-apolar contacts: 31.0
+[+] Percentage of apolar NIS residues: 45.60
+[+] Percentage of charged NIS residues: 18.13
+[++] Predicted binding affinity (kcal.mol-1):    -10.9
+[++] Predicted dissociation constant (M) at 25.0˚C:  1.1e-08
+
+[+] Parsed structure file RBD_RSB_6LZG_unrelaxed_rank_003_alphafold2_ptm_model_5_seed_000.pdb-6lzg-A_7_upd.pdb-complex (2 chains, 237 residues)
+[+] No. of intermolecular contacts: 92
+[+] No. of charged-charged contacts: 1.0
+[+] No. of charged-polar contacts: 3.0
+[+] No. of charged-apolar contacts: 16.0
+[+] No. of polar-polar contacts: 1.0
+[+] No. of apolar-polar contacts: 16.0
+[+] No. of apolar-apolar contacts: 55.0
+[+] Percentage of apolar NIS residues: 43.81
+[+] Percentage of charged NIS residues: 18.56
+[++] Predicted binding affinity (kcal.mol-1):    -10.3
+[++] Predicted dissociation constant (M) at 25.0˚C:  2.7e-08
+
+[+] Parsed structure file RBD_RSB_6LZG_unrelaxed_rank_002_alphafold2_ptm_model_3_seed_000.pdb-6lzg-A_6_upd.pdb-complex (2 chains, 237 residues)
+[+] No. of intermolecular contacts: 92
+[+] No. of charged-charged contacts: 4.0
+[+] No. of charged-polar contacts: 5.0
+[+] No. of charged-apolar contacts: 19.0
+[+] No. of polar-polar contacts: 2.0
+[+] No. of apolar-polar contacts: 15.0
+[+] No. of apolar-apolar contacts: 47.0
+[+] Percentage of apolar NIS residues: 44.67
+[+] Percentage of charged NIS residues: 17.77
+[++] Predicted binding affinity (kcal.mol-1):    -10.4
+[++] Predicted dissociation constant (M) at 25.0˚C:  2.2e-08
+
+[+] Parsed structure file RBD_RSB_6LZG_unrelaxed_rank_003_alphafold2_ptm_model_5_seed_000.pdb-6lzg-A_4_upd.pdb-complex (2 chains, 239 residues)
+[+] No. of intermolecular contacts: 71
+[+] No. of charged-charged contacts: 3.0
+[+] No. of charged-polar contacts: 4.0
+[+] No. of charged-apolar contacts: 12.0
+[+] No. of polar-polar contacts: 0.0
+[+] No. of apolar-polar contacts: 10.0
+[+] No. of apolar-apolar contacts: 42.0
+[+] Percentage of apolar NIS residues: 44.67
+[+] Percentage of charged NIS residues: 17.77
+[++] Predicted binding affinity (kcal.mol-1):     -8.9
+[++] Predicted dissociation constant (M) at 25.0˚C:  3.0e-07
+
+[+] Parsed structure file RBD_RSB_6LZG_unrelaxed_rank_001_alphafold2_ptm_model_4_seed_000.pdb-6lzg-A_6_upd.pdb-complex (2 chains, 237 residues)
+[+] No. of intermolecular contacts: 76
+[+] No. of charged-charged contacts: 3.0
+[+] No. of charged-polar contacts: 2.0
+[+] No. of charged-apolar contacts: 22.0
+[+] No. of polar-polar contacts: 1.0
+[+] No. of apolar-polar contacts: 8.0
+[+] No. of apolar-apolar contacts: 40.0
+[+] Percentage of apolar NIS residues: 43.39
+[+] Percentage of charged NIS residues: 17.99
+[++] Predicted binding affinity (kcal.mol-1):     -9.5
+[++] Predicted dissociation constant (M) at 25.0˚C:  1.2e-07
+
+[+] Parsed structure file RBD_RSB_6LZG_unrelaxed_rank_001_alphafold2_ptm_model_4_seed_000.pdb-6lzg-A_8_upd.pdb-complex (2 chains, 237 residues)
+[+] No. of intermolecular contacts: 78
+[+] No. of charged-charged contacts: 4.0
+[+] No. of charged-polar contacts: 3.0
+[+] No. of charged-apolar contacts: 24.0
+[+] No. of polar-polar contacts: 1.0
+[+] No. of apolar-polar contacts: 7.0
+[+] No. of apolar-apolar contacts: 39.0
+[+] Percentage of apolar NIS residues: 44.50
+[+] Percentage of charged NIS residues: 17.28
+[++] Predicted binding affinity (kcal.mol-1):     -9.4
+[++] Predicted dissociation constant (M) at 25.0˚C:  1.2e-07
+
+[+] Parsed structure file RBD_RSB_6LZG_unrelaxed_rank_004_alphafold2_ptm_model_2_seed_000.pdb-6lzg-A_3_upd.pdb-complex (2 chains, 236 residues)
+[+] No. of intermolecular contacts: 85
+[+] No. of charged-charged contacts: 1.0
+[+] No. of charged-polar contacts: 1.0
+[+] No. of charged-apolar contacts: 22.0
+[+] No. of polar-polar contacts: 1.0
+[+] No. of apolar-polar contacts: 13.0
+[+] No. of apolar-apolar contacts: 47.0
+[+] Percentage of apolar NIS residues: 42.86
+[+] Percentage of charged NIS residues: 19.05
+[++] Predicted binding affinity (kcal.mol-1):    -10.4
+[++] Predicted dissociation constant (M) at 25.0˚C:  2.5e-08
+
+[+] Parsed structure file RBD_RSB_6LZG_unrelaxed_rank_003_alphafold2_ptm_model_5_seed_000.pdb-6lzg-A_3_upd.pdb-complex (2 chains, 236 residues)
+[+] No. of intermolecular contacts: 48
+[+] No. of charged-charged contacts: 0.0
+[+] No. of charged-polar contacts: 0.0
+[+] No. of charged-apolar contacts: 3.0
+[+] No. of polar-polar contacts: 0.0
+[+] No. of apolar-polar contacts: 10.0
+[+] No. of apolar-apolar contacts: 35.0
+[+] Percentage of apolar NIS residues: 43.30
+[+] Percentage of charged NIS residues: 18.56
+[++] Predicted binding affinity (kcal.mol-1):     -7.9
+[++] Predicted dissociation constant (M) at 25.0˚C:  1.7e-06
+
+[+] Parsed structure file RBD_RSB_6LZG_unrelaxed_rank_003_alphafold2_ptm_model_5_seed_000.pdb-6lzg-A_1_upd.pdb-complex (2 chains, 239 residues)
+[+] No. of intermolecular contacts: 61
+[+] No. of charged-charged contacts: 0.0
+[+] No. of charged-polar contacts: 1.0
+[+] No. of charged-apolar contacts: 15.0
+[+] No. of polar-polar contacts: 0.0
+[+] No. of apolar-polar contacts: 10.0
+[+] No. of apolar-apolar contacts: 35.0
+[+] Percentage of apolar NIS residues: 44.10
+[+] Percentage of charged NIS residues: 17.95
+[++] Predicted binding affinity (kcal.mol-1):     -9.0
+[++] Predicted dissociation constant (M) at 25.0˚C:  2.5e-07
+
+[+] Parsed structure file RBD_RSB_6LZG_unrelaxed_rank_004_alphafold2_ptm_model_2_seed_000.pdb-6lzg-A_9_upd.pdb-complex (2 chains, 238 residues)
+[+] No. of intermolecular contacts: 70
+[+] No. of charged-charged contacts: 2.0
+[+] No. of charged-polar contacts: 0.0
+[+] No. of charged-apolar contacts: 22.0
+[+] No. of polar-polar contacts: 0.0
+[+] No. of apolar-polar contacts: 9.0
+[+] No. of apolar-apolar contacts: 37.0
+[+] Percentage of apolar NIS residues: 43.81
+[+] Percentage of charged NIS residues: 18.56
+[++] Predicted binding affinity (kcal.mol-1):     -9.6
+[++] Predicted dissociation constant (M) at 25.0˚C:  8.7e-08
+
+[+] Parsed structure file RBD_RSB_6LZG_unrelaxed_rank_002_alphafold2_ptm_model_3_seed_000.pdb-6lzg-A_7_upd.pdb-complex (2 chains, 237 residues)
+[+] No. of intermolecular contacts: 67
+[+] No. of charged-charged contacts: 1.0
+[+] No. of charged-polar contacts: 2.0
+[+] No. of charged-apolar contacts: 10.0
+[+] No. of polar-polar contacts: 0.0
+[+] No. of apolar-polar contacts: 19.0
+[+] No. of apolar-apolar contacts: 35.0
+[+] Percentage of apolar NIS residues: 43.94
+[+] Percentage of charged NIS residues: 18.18
+[++] Predicted binding affinity (kcal.mol-1):    -10.6
+[++] Predicted dissociation constant (M) at 25.0˚C:  1.6e-08
+
+[+] Parsed structure file RBD_RSB_6LZG_unrelaxed_rank_002_alphafold2_ptm_model_3_seed_000.pdb-6lzg-A_0_upd.pdb-complex (2 chains, 239 residues)
+[+] No. of intermolecular contacts: 90
+[+] No. of charged-charged contacts: 5.0
+[+] No. of charged-polar contacts: 6.0
+[+] No. of charged-apolar contacts: 20.0
+[+] No. of polar-polar contacts: 0.0
+[+] No. of apolar-polar contacts: 18.0
+[+] No. of apolar-apolar contacts: 41.0
+[+] Percentage of apolar NIS residues: 45.05
+[+] Percentage of charged NIS residues: 17.33
+[++] Predicted binding affinity (kcal.mol-1):    -11.7
+[++] Predicted dissociation constant (M) at 25.0˚C:  2.7e-09
+
+[+] Parsed structure file RBD_RSB_6LZG_unrelaxed_rank_005_alphafold2_ptm_model_1_seed_000.pdb-6lzg-A_8_upd.pdb-complex (2 chains, 237 residues)
+[+] No. of intermolecular contacts: 99
+[+] No. of charged-charged contacts: 6.0
+[+] No. of charged-polar contacts: 9.0
+[+] No. of charged-apolar contacts: 26.0
+[+] No. of polar-polar contacts: 0.0
+[+] No. of apolar-polar contacts: 11.0
+[+] No. of apolar-apolar contacts: 47.0
+[+] Percentage of apolar NIS residues: 43.81
+[+] Percentage of charged NIS residues: 17.01
+[++] Predicted binding affinity (kcal.mol-1):    -11.1
+[++] Predicted dissociation constant (M) at 25.0˚C:  7.6e-09
+
+[+] Parsed structure file RBD_RSB_6LZG_unrelaxed_rank_001_alphafold2_ptm_model_4_seed_000.pdb-6lzg-A_2_upd.pdb-complex (2 chains, 239 residues)
+[+] No. of intermolecular contacts: 76
+[+] No. of charged-charged contacts: 1.0
+[+] No. of charged-polar contacts: 3.0
+[+] No. of charged-apolar contacts: 27.0
+[+] No. of polar-polar contacts: 0.0
+[+] No. of apolar-polar contacts: 15.0
+[+] No. of apolar-apolar contacts: 30.0
+[+] Percentage of apolar NIS residues: 43.81
+[+] Percentage of charged NIS residues: 17.53
+[++] Predicted binding affinity (kcal.mol-1):    -11.5
+[++] Predicted dissociation constant (M) at 25.0˚C:  3.5e-09
+
+[+] Parsed structure file RBD_RSB_6LZG_unrelaxed_rank_005_alphafold2_ptm_model_1_seed_000.pdb-6lzg-A_1_upd.pdb-complex (2 chains, 239 residues)
+[+] No. of intermolecular contacts: 80
+[+] No. of charged-charged contacts: 3.0
+[+] No. of charged-polar contacts: 7.0
+[+] No. of charged-apolar contacts: 24.0
+[+] No. of polar-polar contacts: 1.0
+[+] No. of apolar-polar contacts: 10.0
+[+] No. of apolar-apolar contacts: 35.0
+[+] Percentage of apolar NIS residues: 45.27
+[+] Percentage of charged NIS residues: 16.42
+[++] Predicted binding affinity (kcal.mol-1):    -10.0
+[++] Predicted dissociation constant (M) at 25.0˚C:  4.8e-08
+
+[+] Parsed structure file RBD_RSB_6LZG_unrelaxed_rank_001_alphafold2_ptm_model_4_seed_000.pdb-6lzg-A_7_upd.pdb-complex (2 chains, 237 residues)
+[+] No. of intermolecular contacts: 73
+[+] No. of charged-charged contacts: 6.0
+[+] No. of charged-polar contacts: 1.0
+[+] No. of charged-apolar contacts: 24.0
+[+] No. of polar-polar contacts: 1.0
+[+] No. of apolar-polar contacts: 10.0
+[+] No. of apolar-apolar contacts: 31.0
+[+] Percentage of apolar NIS residues: 44.79
+[+] Percentage of charged NIS residues: 17.19
+[++] Predicted binding affinity (kcal.mol-1):    -10.2
+[++] Predicted dissociation constant (M) at 25.0˚C:  3.1e-08
+
+[+] Parsed structure file RBD_RSB_6LZG_unrelaxed_rank_005_alphafold2_ptm_model_1_seed_000.pdb-6lzg-A_0_upd.pdb-complex (2 chains, 239 residues)
+[+] No. of intermolecular contacts: 85
+[+] No. of charged-charged contacts: 5.0
+[+] No. of charged-polar contacts: 9.0
+[+] No. of charged-apolar contacts: 27.0
+[+] No. of polar-polar contacts: 1.0
+[+] No. of apolar-polar contacts: 6.0
+[+] No. of apolar-apolar contacts: 37.0
+[+] Percentage of apolar NIS residues: 45.27
+[+] Percentage of charged NIS residues: 16.42
+[++] Predicted binding affinity (kcal.mol-1):     -9.6
+[++] Predicted dissociation constant (M) at 25.0˚C:  9.8e-08
+
+[+] Parsed structure file RBD_RSB_6LZG_unrelaxed_rank_001_alphafold2_ptm_model_4_seed_000.pdb-6lzg-A_0_upd.pdb-complex (2 chains, 239 residues)
+[+] No. of intermolecular contacts: 72
+[+] No. of charged-charged contacts: 0.0
+[+] No. of charged-polar contacts: 3.0
+[+] No. of charged-apolar contacts: 30.0
+[+] No. of polar-polar contacts: 1.0
+[+] No. of apolar-polar contacts: 14.0
+[+] No. of apolar-apolar contacts: 24.0
+[+] Percentage of apolar NIS residues: 45.69
+[+] Percentage of charged NIS residues: 16.24
+[++] Predicted binding affinity (kcal.mol-1):    -11.1
+[++] Predicted dissociation constant (M) at 25.0˚C:  6.7e-09
+
+[+] Parsed structure file RBD_RSB_6LZG_unrelaxed_rank_001_alphafold2_ptm_model_4_seed_000.pdb-6lzg-A_4_upd.pdb-complex (2 chains, 239 residues)
+[+] No. of intermolecular contacts: 71
+[+] No. of charged-charged contacts: 2.0
+[+] No. of charged-polar contacts: 4.0
+[+] No. of charged-apolar contacts: 34.0
+[+] No. of polar-polar contacts: 0.0
+[+] No. of apolar-polar contacts: 13.0
+[+] No. of apolar-apolar contacts: 18.0
+[+] Percentage of apolar NIS residues: 46.46
+[+] Percentage of charged NIS residues: 15.66
+[++] Predicted binding affinity (kcal.mol-1):    -11.6
+[++] Predicted dissociation constant (M) at 25.0˚C:  2.9e-09
+
+[+] Parsed structure file RBD_RSB_6LZG_unrelaxed_rank_002_alphafold2_ptm_model_3_seed_000.pdb-6lzg-A_9_upd.pdb-complex (2 chains, 238 residues)
+[+] No. of intermolecular contacts: 78
+[+] No. of charged-charged contacts: 3.0
+[+] No. of charged-polar contacts: 6.0
+[+] No. of charged-apolar contacts: 22.0
+[+] No. of polar-polar contacts: 0.0
+[+] No. of apolar-polar contacts: 11.0
+[+] No. of apolar-apolar contacts: 36.0
+[+] Percentage of apolar NIS residues: 45.00
+[+] Percentage of charged NIS residues: 17.00
+[++] Predicted binding affinity (kcal.mol-1):    -10.2
+[++] Predicted dissociation constant (M) at 25.0˚C:  3.5e-08
+
+[+] Parsed structure file RBD_RSB_6LZG_unrelaxed_rank_005_alphafold2_ptm_model_1_seed_000.pdb-6lzg-A_6_upd.pdb-complex (2 chains, 237 residues)
+[+] No. of intermolecular contacts: 100
+[+] No. of charged-charged contacts: 6.0
+[+] No. of charged-polar contacts: 10.0
+[+] No. of charged-apolar contacts: 30.0
+[+] No. of polar-polar contacts: 1.0
+[+] No. of apolar-polar contacts: 12.0
+[+] No. of apolar-apolar contacts: 41.0
+[+] Percentage of apolar NIS residues: 44.39
+[+] Percentage of charged NIS residues: 16.84
+[++] Predicted binding affinity (kcal.mol-1):    -11.4
+[++] Predicted dissociation constant (M) at 25.0˚C:  4.2e-09
+
+[+] Parsed structure file RBD_RSB_6LZG_unrelaxed_rank_005_alphafold2_ptm_model_1_seed_000.pdb-6lzg-A_2_upd.pdb-complex (2 chains, 239 residues)
+[+] No. of intermolecular contacts: 120
+[+] No. of charged-charged contacts: 4.0
+[+] No. of charged-polar contacts: 9.0
+[+] No. of charged-apolar contacts: 29.0
+[+] No. of polar-polar contacts: 2.0
+[+] No. of apolar-polar contacts: 23.0
+[+] No. of apolar-apolar contacts: 53.0
+[+] Percentage of apolar NIS residues: 44.90
+[+] Percentage of charged NIS residues: 17.35
+[++] Predicted binding affinity (kcal.mol-1):    -13.3
+[++] Predicted dissociation constant (M) at 25.0˚C:  1.9e-10
+
+[+] Parsed structure file RBD_RSB_6LZG_unrelaxed_rank_001_alphafold2_ptm_model_4_seed_000.pdb-6lzg-A_1_upd.pdb-complex (2 chains, 239 residues)
+[+] No. of intermolecular contacts: 72
+[+] No. of charged-charged contacts: 3.0
+[+] No. of charged-polar contacts: 3.0
+[+] No. of charged-apolar contacts: 26.0
+[+] No. of polar-polar contacts: 0.0
+[+] No. of apolar-polar contacts: 13.0
+[+] No. of apolar-apolar contacts: 27.0
+[+] Percentage of apolar NIS residues: 44.39
+[+] Percentage of charged NIS residues: 17.35
+[++] Predicted binding affinity (kcal.mol-1):    -11.1
+[++] Predicted dissociation constant (M) at 25.0˚C:  7.4e-09
+
+[+] Parsed structure file RBD_RSB_6LZG_unrelaxed_rank_002_alphafold2_ptm_model_3_seed_000.pdb-6lzg-A_5_upd.pdb-complex (2 chains, 239 residues)
+[+] No. of intermolecular contacts: 56
+[+] No. of charged-charged contacts: 2.0
+[+] No. of charged-polar contacts: 2.0
+[+] No. of charged-apolar contacts: 16.0
+[+] No. of polar-polar contacts: 0.0
+[+] No. of apolar-polar contacts: 8.0
+[+] No. of apolar-apolar contacts: 28.0
+[+] Percentage of apolar NIS residues: 45.00
+[+] Percentage of charged NIS residues: 18.00
+[++] Predicted binding affinity (kcal.mol-1):     -8.7
+[++] Predicted dissociation constant (M) at 25.0˚C:  4.5e-07
+
+[+] Parsed structure file RBD_RSB_6LZG_unrelaxed_rank_002_alphafold2_ptm_model_3_seed_000.pdb-6lzg-A_4_upd.pdb-complex (2 chains, 239 residues)
+[+] No. of intermolecular contacts: 83
+[+] No. of charged-charged contacts: 4.0
+[+] No. of charged-polar contacts: 4.0
+[+] No. of charged-apolar contacts: 12.0
+[+] No. of polar-polar contacts: 0.0
+[+] No. of apolar-polar contacts: 11.0
+[+] No. of apolar-apolar contacts: 52.0
+[+] Percentage of apolar NIS residues: 45.05
+[+] Percentage of charged NIS residues: 17.82
+[++] Predicted binding affinity (kcal.mol-1):     -9.1
+[++] Predicted dissociation constant (M) at 25.0˚C:  2.0e-07
+
+[+] Parsed structure file RBD_RSB_6LZG_unrelaxed_rank_004_alphafold2_ptm_model_2_seed_000.pdb-6lzg-A_4_upd.pdb-complex (2 chains, 239 residues)
+[+] No. of intermolecular contacts: 81
+[+] No. of charged-charged contacts: 0.0
+[+] No. of charged-polar contacts: 4.0
+[+] No. of charged-apolar contacts: 22.0
+[+] No. of polar-polar contacts: 0.0
+[+] No. of apolar-polar contacts: 14.0
+[+] No. of apolar-apolar contacts: 41.0
+[+] Percentage of apolar NIS residues: 43.16
+[+] Percentage of charged NIS residues: 18.95
+[++] Predicted binding affinity (kcal.mol-1):    -10.6
+[++] Predicted dissociation constant (M) at 25.0˚C:  1.6e-08
+
+[+] Parsed structure file RBD_RSB_6LZG_unrelaxed_rank_005_alphafold2_ptm_model_1_seed_000.pdb-6lzg-A_3_upd.pdb-complex (2 chains, 236 residues)
+[+] No. of intermolecular contacts: 72
+[+] No. of charged-charged contacts: 4.0
+[+] No. of charged-polar contacts: 0.0
+[+] No. of charged-apolar contacts: 31.0
+[+] No. of polar-polar contacts: 0.0
+[+] No. of apolar-polar contacts: 14.0
+[+] No. of apolar-apolar contacts: 23.0
+[+] Percentage of apolar NIS residues: 44.78
+[+] Percentage of charged NIS residues: 16.92
+[++] Predicted binding affinity (kcal.mol-1):    -11.9
+[++] Predicted dissociation constant (M) at 25.0˚C:  1.9e-09
+
+[+] Parsed structure file RBD_RSB_6LZG_unrelaxed_rank_001_alphafold2_ptm_model_4_seed_000.pdb-6lzg-A_9_upd.pdb-complex (2 chains, 238 residues)
+[+] No. of intermolecular contacts: 68
+[+] No. of charged-charged contacts: 3.0
+[+] No. of charged-polar contacts: 4.0
+[+] No. of charged-apolar contacts: 23.0
+[+] No. of polar-polar contacts: 0.0
+[+] No. of apolar-polar contacts: 9.0
+[+] No. of apolar-apolar contacts: 29.0
+[+] Percentage of apolar NIS residues: 45.13
+[+] Percentage of charged NIS residues: 16.92
+[++] Predicted binding affinity (kcal.mol-1):     -9.8
+[++] Predicted dissociation constant (M) at 25.0˚C:  6.5e-08
+
+[+] Parsed structure file RBD_RSB_6LZG_unrelaxed_rank_002_alphafold2_ptm_model_3_seed_000.pdb-6lzg-A_8_upd.pdb-complex (2 chains, 237 residues)
+[+] No. of intermolecular contacts: 68
+[+] No. of charged-charged contacts: 0.0
+[+] No. of charged-polar contacts: 4.0
+[+] No. of charged-apolar contacts: 11.0
+[+] No. of polar-polar contacts: 3.0
+[+] No. of apolar-polar contacts: 26.0
+[+] No. of apolar-apolar contacts: 24.0
+[+] Percentage of apolar NIS residues: 44.39
+[+] Percentage of charged NIS residues: 17.86
+[++] Predicted binding affinity (kcal.mol-1):    -11.6
+[++] Predicted dissociation constant (M) at 25.0˚C:  3.1e-09
+
+[+] Parsed structure file RBD_RSB_6LZG_unrelaxed_rank_005_alphafold2_ptm_model_1_seed_000.pdb-6lzg-A_5_upd.pdb-complex (2 chains, 239 residues)
+[+] No. of intermolecular contacts: 121
+[+] No. of charged-charged contacts: 4.0
+[+] No. of charged-polar contacts: 9.0
+[+] No. of charged-apolar contacts: 30.0
+[+] No. of polar-polar contacts: 2.0
+[+] No. of apolar-polar contacts: 23.0
+[+] No. of apolar-apolar contacts: 53.0
+[+] Percentage of apolar NIS residues: 44.90
+[+] Percentage of charged NIS residues: 17.35
+[++] Predicted binding affinity (kcal.mol-1):    -13.4
+[++] Predicted dissociation constant (M) at 25.0˚C:  1.6e-10
+
+[+] Parsed structure file RBD_RSB_6LZG_unrelaxed_rank_004_alphafold2_ptm_model_2_seed_000.pdb-6lzg-A_5_upd.pdb-complex (2 chains, 239 residues)
+[+] No. of intermolecular contacts: 98
+[+] No. of charged-charged contacts: 0.0
+[+] No. of charged-polar contacts: 1.0
+[+] No. of charged-apolar contacts: 24.0
+[+] No. of polar-polar contacts: 0.0
+[+] No. of apolar-polar contacts: 13.0
+[+] No. of apolar-apolar contacts: 60.0
+[+] Percentage of apolar NIS residues: 44.39
+[+] Percentage of charged NIS residues: 18.37
+[++] Predicted binding affinity (kcal.mol-1):    -10.5
+[++] Predicted dissociation constant (M) at 25.0˚C:  2.1e-08
+
+[+] Parsed structure file RBD_RSB_6LZG_unrelaxed_rank_005_alphafold2_ptm_model_1_seed_000.pdb-6lzg-A_4_upd.pdb-complex (2 chains, 239 residues)
+[+] No. of intermolecular contacts: 136
+[+] No. of charged-charged contacts: 4.0
+[+] No. of charged-polar contacts: 9.0
+[+] No. of charged-apolar contacts: 32.0
+[+] No. of polar-polar contacts: 2.0
+[+] No. of apolar-polar contacts: 25.0
+[+] No. of apolar-apolar contacts: 64.0
+[+] Percentage of apolar NIS residues: 44.33
+[+] Percentage of charged NIS residues: 17.53
+[++] Predicted binding affinity (kcal.mol-1):    -14.1
+[++] Predicted dissociation constant (M) at 25.0˚C:  4.6e-11
+
+[+] Parsed structure file RBD_RSB_6LZG_unrelaxed_rank_004_alphafold2_ptm_model_2_seed_000.pdb-6lzg-A_7_upd.pdb-complex (2 chains, 237 residues)
+[+] No. of intermolecular contacts: 60
+[+] No. of charged-charged contacts: 1.0
+[+] No. of charged-polar contacts: 0.0
+[+] No. of charged-apolar contacts: 20.0
+[+] No. of polar-polar contacts: 1.0
+[+] No. of apolar-polar contacts: 7.0
+[+] No. of apolar-apolar contacts: 31.0
+[+] Percentage of apolar NIS residues: 43.52
+[+] Percentage of charged NIS residues: 18.65
+[++] Predicted binding affinity (kcal.mol-1):     -8.7
+[++] Predicted dissociation constant (M) at 25.0˚C:  4.0e-07
+
+[+] Parsed structure file RBD_RSB_6LZG_unrelaxed_rank_003_alphafold2_ptm_model_5_seed_000.pdb-6lzg-A_5_upd.pdb-complex (2 chains, 239 residues)
+[+] No. of intermolecular contacts: 62
+[+] No. of charged-charged contacts: 0.0
+[+] No. of charged-polar contacts: 1.0
+[+] No. of charged-apolar contacts: 9.0
+[+] No. of polar-polar contacts: 0.0
+[+] No. of apolar-polar contacts: 8.0
+[+] No. of apolar-apolar contacts: 44.0
+[+] Percentage of apolar NIS residues: 44.44
+[+] Percentage of charged NIS residues: 18.18
+[++] Predicted binding affinity (kcal.mol-1):     -7.8
+[++] Predicted dissociation constant (M) at 25.0˚C:  1.8e-06
+
+[+] Parsed structure file RBD_RSB_6LZG_unrelaxed_rank_002_alphafold2_ptm_model_3_seed_000.pdb-6lzg-A_3_upd.pdb-complex (2 chains, 236 residues)
+[+] No. of intermolecular contacts: 76
+[+] No. of charged-charged contacts: 5.0
+[+] No. of charged-polar contacts: 3.0
+[+] No. of charged-apolar contacts: 23.0
+[+] No. of polar-polar contacts: 0.0
+[+] No. of apolar-polar contacts: 17.0
+[+] No. of apolar-apolar contacts: 28.0
+[+] Percentage of apolar NIS residues: 44.16
+[+] Percentage of charged NIS residues: 17.77
+[++] Predicted binding affinity (kcal.mol-1):    -11.9
+[++] Predicted dissociation constant (M) at 25.0˚C:  2.0e-09
+
+[+] Parsed structure file RBD_RSB_6LZG_unrelaxed_rank_003_alphafold2_ptm_model_5_seed_000.pdb-6lzg-A_6_upd.pdb-complex (2 chains, 237 residues)
+[+] No. of intermolecular contacts: 79
+[+] No. of charged-charged contacts: 1.0
+[+] No. of charged-polar contacts: 2.0
+[+] No. of charged-apolar contacts: 16.0
+[+] No. of polar-polar contacts: 1.0
+[+] No. of apolar-polar contacts: 10.0
+[+] No. of apolar-apolar contacts: 49.0
+[+] Percentage of apolar NIS residues: 44.33
+[+] Percentage of charged NIS residues: 18.56
+[++] Predicted binding affinity (kcal.mol-1):     -8.9
+[++] Predicted dissociation constant (M) at 25.0˚C:  3.1e-07
+
+[+] Parsed structure file RBD_RSB_6LZG_unrelaxed_rank_003_alphafold2_ptm_model_5_seed_000.pdb-6lzg-A_9_upd.pdb-complex (2 chains, 238 residues)
+[+] No. of intermolecular contacts: 73
+[+] No. of charged-charged contacts: 3.0
+[+] No. of charged-polar contacts: 4.0
+[+] No. of charged-apolar contacts: 13.0
+[+] No. of polar-polar contacts: 0.0
+[+] No. of apolar-polar contacts: 7.0
+[+] No. of apolar-apolar contacts: 46.0
+[+] Percentage of apolar NIS residues: 44.39
+[+] Percentage of charged NIS residues: 17.86
+[++] Predicted binding affinity (kcal.mol-1):     -8.4
+[++] Predicted dissociation constant (M) at 25.0˚C:  7.4e-07
+
+[+] Parsed structure file RBD_RSB_6LZG_unrelaxed_rank_004_alphafold2_ptm_model_2_seed_000.pdb-6lzg-A_0_upd.pdb-complex (2 chains, 239 residues)
+[+] No. of intermolecular contacts: 73
+[+] No. of charged-charged contacts: 3.0
+[+] No. of charged-polar contacts: 0.0
+[+] No. of charged-apolar contacts: 13.0
+[+] No. of polar-polar contacts: 0.0
+[+] No. of apolar-polar contacts: 5.0
+[+] No. of apolar-apolar contacts: 52.0
+[+] Percentage of apolar NIS residues: 44.67
+[+] Percentage of charged NIS residues: 18.27
+[++] Predicted binding affinity (kcal.mol-1):     -7.8
+[++] Predicted dissociation constant (M) at 25.0˚C:  1.9e-06
+
+[+] Parsed structure file RBD_RSB_6LZG_unrelaxed_rank_005_alphafold2_ptm_model_1_seed_000.pdb-6lzg-A_9_upd.pdb-complex (2 chains, 238 residues)
+[+] No. of intermolecular contacts: 106
+[+] No. of charged-charged contacts: 8.0
+[+] No. of charged-polar contacts: 8.0
+[+] No. of charged-apolar contacts: 25.0
+[+] No. of polar-polar contacts: 0.0
+[+] No. of apolar-polar contacts: 19.0
+[+] No. of apolar-apolar contacts: 46.0
+[+] Percentage of apolar NIS residues: 44.33
+[+] Percentage of charged NIS residues: 17.01
+[++] Predicted binding affinity (kcal.mol-1):    -12.9
+[++] Predicted dissociation constant (M) at 25.0˚C:  3.6e-10
+
+[+] Parsed structure file RBD_RSB_6LZG_unrelaxed_rank_003_alphafold2_ptm_model_5_seed_000.pdb-6lzg-A_0_upd.pdb-complex (2 chains, 239 residues)
+[+] No. of intermolecular contacts: 71
+[+] No. of charged-charged contacts: 4.0
+[+] No. of charged-polar contacts: 4.0
+[+] No. of charged-apolar contacts: 13.0
+[+] No. of polar-polar contacts: 0.0
+[+] No. of apolar-polar contacts: 8.0
+[+] No. of apolar-apolar contacts: 42.0
+[+] Percentage of apolar NIS residues: 44.62
+[+] Percentage of charged NIS residues: 17.95
+[++] Predicted binding affinity (kcal.mol-1):     -8.6
+[++] Predicted dissociation constant (M) at 25.0˚C:  4.7e-07
+
