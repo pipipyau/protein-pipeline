@@ -24,10 +24,6 @@ Design protein aptamers using RFdiffusion:
   inference.output_prefix=/path/to/outputs/6lzg-A \
   inference.num_designs=10
 ```
-
-**Configuration:**  
-See [RFdiffusion Config Notes](Конфиг%20RFdiffusion.md)
-
 ---
 
 ## 2. Protein Docking with MEGADOCK
@@ -44,27 +40,13 @@ NVCC := $(CUDA_INSTALL_PATH)/bin/nvcc -Xcompiler -fopenmp -arch=$(SM_VERSIONS) -
 
 ### Preprocessing
 RFdiffusion outputs need reformatting (PDB line length < 80 chars):
-
-```python
-# fix_pdb.py
-import os
-from Bio.PDB import PDBParser, PDBIO
-
-folder_path = "/path/to/outputs"
-pdb_files = [f for f in os.listdir(folder_path) if f.endswith(".pdb")]
-
-for file in pdb_files:
-    parser = PDBParser()
-    structure = parser.get_structure("temp", os.path.join(folder_path, file))
-    io = PDBIO()
-    io.set_structure(structure)
-    io.save(os.path.join(folder_path, file.replace(".pdb", "_upd.pdb")))
+```bash
+python ./util_scripts/fix_pdb.py
 ```
 
 ### Running Docking
 ```bash
-python ./fix_pdb.py
-sudo ./script_multi_dock.sh
+sudo ./util_scripts/script_multi_dock.sh
 ```
 
 **Output:**  
@@ -86,7 +68,7 @@ pip install prodigy-prot
 ### Calculation Script
 ```bash
 #!/bin/bash
-# script_affinity.sh
+# ./util_scripts/script_affinity.sh
 
 OUTPUT_FILE="prodigy_results.txt"
 > "$OUTPUT_FILE"
