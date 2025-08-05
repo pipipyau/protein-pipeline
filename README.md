@@ -24,7 +24,36 @@ Design protein aptamers using RFdiffusion:
   inference.output_prefix=/path/to/outputs/6lzg-A \
   inference.num_designs=10
 ```
+
+*Note:* 0. Searching for a similar chain in PDB using Biopython and multialign
+
+We have an RBD part that communicates with ACE2. Multi-alignment is used to find similar parts in the RDB obtained using AlphaFold. The result in the form of a chain is further fed to the RFD input.
+
 ---
+
+## 2. Sequence design with ProteinMPNN
+
+RFdiffusion is a backbone-generation model and does not generate sequence for the designed region, therefore, another method must be used to assign a sequence to the binders.
+Git clone [ProteinMPNN](https://github.com/dauparas/ProteinMPNN/tree/main) and run ./util_scripts/run_protein_mpnn.sh from repo folder.
+
+```bash
+cd ProteinMPNN
+./util_scripts/run_protein_mpnn.sh
+```
+
+All in one
+```bash
+cat /home/shared/alyanova/protein_mpnn_outputs/seqs/all_sequences.fa
+```
+
+---
+
+## 3. MAFFT aling
+
+[Install MAFFT](https://mafft.cbrc.jp/alignment/software/linux.html)
+[Online version](https://mafft.cbrc.jp/alignment/server/)
+
+Visualisation by stackbar plot.
 
 ## 2. Protein Docking with MEGADOCK
 
