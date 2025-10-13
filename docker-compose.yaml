@@ -1,5 +1,25 @@
 version: '3.9'
 services:
+  megadock:
+    build:
+      context: ./MEGADOCK
+      dockerfile: Dockerfiles/gpu/Dockerfile
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - capabilities: [gpu]
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
+    volumes:
+      - ./data/output/alphafold3/receptor:/app/input/receptor
+      - ./data/output/alphafold3/ligand:/app/input/ligand
+      - ./data/output/megadock:/app/output
+    working_dir: /app
+    tty: true
+    stdin_open: true
+    command: [ "sleep", "infinity" ]
+
   prodigy:
     build:
       context: ./prodigy

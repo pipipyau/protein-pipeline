@@ -15,33 +15,28 @@ This pipeline combines RFdiffusion for protein design with MEGADOCK for protein 
 ## 1. AlphaFold 3 Pipeline
 
 Used [repo](https://github.com/google-deepmind/alphafold3?ysclid=mgot4mzvap467461191).
+
+Установка по [инструкции](https://github.com/google-deepmind/alphafold3/blob/main/docs/installation.md). 
+
+Для БД:
+`choco install wget -y` 
+
 ## 2. Protein Docking with MEGADOCK
 
 ### Installation
+
+Клонирвоаь репозиторий Megadock.
+
 Requires MEGADOCK-GPU (non-MPI version):
 ```bash
 git clone https://github.com/akiyamalab/MEGADOCK
 ```
-**Important:** Use GCC 10 (specify in Makefile):
-```makefile
-NVCC := $(CUDA_INSTALL_PATH)/bin/nvcc -Xcompiler -fopenmp -arch=$(SM_VERSIONS) -use_fast_math -ccbin=g++-10
-```
 
-### Preprocessing
-RFdiffusion outputs need reformatting (PDB line length < 80 chars):
-```bash
-python ./util_scripts/fix_pdb.py
-```
+Обновить докерфайл на файл `megadock-patry\Dockerfile` и добавить скрипт `megadock-patry\run_multi_megadock.sh`.
 
 ### Running Docking
-```bash
-sudo ./util_scripts/script_multi_dock.sh
-```
 
-**Output:**  
-Complex files named `*-complex.pdb` where:
-- Receptor chains retain original names (A, B, C...)
-- Ligand chains (designed aptamers) are renamed to Y
+`./run_multi_megadock.sh` внутри контейнера.
 
 ---
 
