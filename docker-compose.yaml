@@ -1,0 +1,13 @@
+version: '3.9'
+services:
+  prodigy:
+    build:
+      context: ./prodigy
+      dockerfile: Dockerfile
+    volumes:
+      - ./data/output/megadock:/app/input
+      - ./data/output/prodigy:/app/output
+    working_dir: /app
+    tty: true
+    stdin_open: true
+    command: [ "sleep", "infinity" ]
