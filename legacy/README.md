@@ -1,20 +1,60 @@
-# AlphaFold3 & Docking Pipeline
+# RFdiffusion Protein Design & Docking Pipeline
 
-![Bioinformatics Pipeline](https://img.shields.io/badge/pipeline-protein-blue)
+![Bioinformatics Pipeline](https://img.shields.io/badge/pipeline-protein_design-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
 This pipeline combines RFdiffusion for protein design with MEGADOCK for protein docking and Prodigy for binding affinity calculations.
 
 ## Table of Contents
-1. [AlphaFold 3 Pipeline](#1-alphafold-3-pipeline)
+1. [Protein Design with RFdiffusion](#1-protein-design-with-rfdiffusion)
 2. [Protein Docking with MEGADOCK](#2-protein-docking-with-megadock)
 3. [Binding Affinity Calculation](#3-binding-affinity-calculation)
 
 ---
 
-## 1. AlphaFold 3 Pipeline
+## 1. Protein Design with RFdiffusion
 
-Used [repo](https://github.com/google-deepmind/alphafold3?ysclid=mgot4mzvap467461191).
+Design protein aptamers using RFdiffusion:
+
+```bash
+./scripts/run_inference.py \
+  'contigmap.contigs=[8-30/A31-41/8-30]' \
+  contigmap.length=8-30 \
+  inference.input_pdb=/path/to/input_pdb/6lzg-A.pdb \
+  inference.output_prefix=/path/to/outputs/6lzg-A \
+  inference.num_designs=10
+```
+
+*Note:* 0. Searching for a similar chain in PDB using Biopython and multialign
+
+We have an RBD part that communicates with ACE2. Multi-alignment is used to find similar parts in the RDB obtained using AlphaFold. The result in the form of a chain is further fed to the RFD input.
+
+---
+
+## 2. Sequence design with ProteinMPNN
+
+RFdiffusion is a backbone-generation model and does not generate sequence for the designed region, therefore, another method must be used to assign a sequence to the binders.
+Git clone [ProteinMPNN](https://github.com/dauparas/ProteinMPNN/tree/main) and run ./util_scripts/run_protein_mpnn.sh from repo folder.
+
+```bash
+cd ProteinMPNN
+./util_scripts/run_protein_mpnn.sh
+```
+
+All in one
+```bash
+cat /home/shared/alyanova/protein_mpnn_outputs/seqs/all_sequences.fa
+```
+
+---
+
+## 3. MAFFT aling
+
+[Install MAFFT](https://mafft.cbrc.jp/alignment/software/linux.html)
+[Online version](https://mafft.cbrc.jp/alignment/server/)
+
+Visualisation by stackbar plot.
+
 ## 2. Protein Docking with MEGADOCK
 
 ### Installation
@@ -83,7 +123,8 @@ The results in `prodigy_results.txt` can be used for binding affinity analysis a
 ## Pipeline Overview
 ```mermaid
 graph TD
-    A[AlphaFold3] --> B[MEGADOCK Docking]
-    B --> C[Prodigy Affinity]
-    C --> D[Analysis]
+    A[RFdiffusion Design] --> B[PDB Format Fix]
+    B --> C[MEGADOCK Docking]
+    C --> D[Prodigy Affinity]
+    D --> E[Analysis]
 ```
