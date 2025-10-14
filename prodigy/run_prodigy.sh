@@ -1,11 +1,11 @@
 #!/bin/sh
 
+INPUT_DIR="input"
 OUTPUT_FILE="output/prodigy_results.txt"
 
 > "$OUTPUT_FILE"
 
-for pdb in $(find . -wholename "/input/RBD*6lzg*-complex.pdb")
-do
+find "$INPUT_DIR" -type f -name "*-complex.pdb" | while read -r pdb; do
   echo "===== Calculating for $pdb ====="
   prodigy "$pdb" --selection A Y >> "$OUTPUT_FILE" 2>&1
   echo "" >> "$OUTPUT_FILE"
