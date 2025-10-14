@@ -1,6 +1,7 @@
 version: '3.9'
 services:
   megadock:
+    container_name: megadock_container
     build:
       context: ./MEGADOCK
       dockerfile: Dockerfiles/gpu/Dockerfile
@@ -21,6 +22,7 @@ services:
     command: [ "sleep", "infinity" ]
 
   prodigy:
+    container_name: prodigy_container
     build:
       context: ./prodigy
       dockerfile: Dockerfile
