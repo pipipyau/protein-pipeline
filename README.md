@@ -9,10 +9,12 @@ This pipeline combines RFdiffusion for protein design with MEGADOCK for protein 
 1. [AlphaFold 3 Pipeline](#1-alphafold-3-pipeline)
 2. [Protein Docking with MEGADOCK](#2-protein-docking-with-megadock)
 3. [Binding Affinity Calculation](#3-binding-affinity-calculation)
-
+4. [How to start?](#how-to-start)
+5. [Pipeline Overview](#pipeline-overview)
 ---
 
 ## 1. AlphaFold 3 Pipeline
+[ ] TODO: update section 1.
 
 Used [repo](https://github.com/google-deepmind/alphafold3?ysclid=mgot4mzvap467461191).
 
@@ -34,51 +36,25 @@ git clone https://github.com/akiyamalab/MEGADOCK
 
 Обновить докерфайл на файл `megadock-patry\Dockerfile` и добавить скрипт `megadock-patry\run_multi_megadock.sh`.
 
-### Running Docking
-
-`./run_multi_megadock.sh` внутри контейнера.
-
 ---
 
 ## 3. Binding Affinity Calculation
 
-### Setup Prodigy
-```bash
-python -m venv ./venv
-source ./venv/bin/activate
-pip install prodigy-prot
-```
-
-### Calculation Script
-```bash
-#!/bin/bash
-# ./util_scripts/script_affinity.sh
-
-OUTPUT_FILE="prodigy_results.txt"
-> "$OUTPUT_FILE"
-
-for pdb in $(find . -name *-complex.pdb); do
-  echo "===== Calculating for $pdb =====" >> "$OUTPUT_FILE"
-  prodigy "$pdb" --selection A Y >> "$OUTPUT_FILE" 2>&1
-  echo "" >> "$OUTPUT_FILE"
-done
-```
-
-**Usage:**
-```bash
-chmod +x script_affinity.sh
-./script_affinity.sh
-```
-
 **Output Analysis:**  
-The results in `prodigy_results.txt` can be used for binding affinity analysis and visualization.
+The results in `affinity.csv` can be used for binding affinity analysis and visualization.
 
 ---
+
+## How to start
+* Установить Docker.
+* Выполнить шаги по установке из пунктов 1-3.
+* Создать структуру папок с помощью `./create_folders.py`.
+* Запустить `./start.sh`.
 
 ## Pipeline Overview
 ```mermaid
 graph TD
     A[AlphaFold3] --> B[MEGADOCK Docking]
     B --> C[Prodigy Affinity]
-    C --> D[Analysis]
+    C --> D[Export]
 ```
