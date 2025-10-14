@@ -14,20 +14,18 @@ This pipeline combines RFdiffusion for protein design with MEGADOCK for protein 
 ---
 
 ## 1. AlphaFold 3 Pipeline
-[ ] TODO: update section 1.
+[-] TODO: update section 1.
 
 Used [repo](https://github.com/google-deepmind/alphafold3?ysclid=mgot4mzvap467461191).
 
 Установка по [инструкции](https://github.com/google-deepmind/alphafold3/blob/main/docs/installation.md). 
 
-Для БД:
-`choco install wget -y` 
 
 ## 2. Protein Docking with MEGADOCK
 
 ### Installation
 
-Клонирвоаь репозиторий Megadock.
+Клонировать репозиторий Megadock.
 
 Requires MEGADOCK-GPU (non-MPI version):
 ```bash
@@ -48,7 +46,7 @@ The results in `affinity.csv` can be used for binding affinity analysis and visu
 ## How to start
 * Установить Docker.
 * Выполнить шаги по установке из пунктов 1-3.
-* Создать структуру папок с помощью `./create_folders.py`.
+* Создать структуру папок с помощью `utils/create_folders.py`.
 * Запустить `./start.sh`.
 
 ## Pipeline Overview
