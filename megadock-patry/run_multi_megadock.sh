@@ -1,38 +1,36 @@
 #!/bin/sh
 
-RECEPTOR_DIR="input/receptor"  # /path/to/receptor/folder
-LIGAND_DIR="input/ligand"      # /path/to/ligand/folder
+RECEPTOR_DIR="input/receptor"
+LIGAND_DIR="input/ligand"
+OUTPUT_DIR="output"
+MEGADOCK_GPU="/usr/local/bin"
+START_DIR=$(pwd)
 
-for receptor in RBD_RSB_6LZG_unrelaxed_rank_001_alphafold2_ptm_model_4_seed_000 RBD_RSB_6LZG_unrelaxed_rank_002_alphafold2_ptm_model_3_seed_000 RBD_RSB_6LZG_unrelaxed_rank_003_alphafold2_ptm_model_5_seed_000 RBD_RSB_6LZG_unrelaxed_rank_004_alphafold2_ptm_model_2_seed_000 RBD_RSB_6LZG_unrelaxed_rank_005_alphafold2_ptm_model_1_seed_000
-do
-    for ligand in 6lzg-A_0_upd 6lzg-A_1_upd 6lzg-A_2_upd 6lzg-A_3_upd 6lzg-A_4_upd 6lzg-A_5_upd 6lzg-A_6_upd 6lzg-A_7_upd 6lzg-A_8_upd 6lzg-A_9_upd
-    do
-        mkdir ${receptor}_${ligand}
-        cd ${receptor}_${ligand}
-        
-        cp ${RECEPTOR_DIR}/${receptor}.pdb ./
-        cp ${LIGAND_DIR}/${ligand}.pdb ./
-        
-        for Rcpt in $(ls ${receptor}.pdb)
-        do
-            for Lgnd in $(ls ${ligand}.pdb)
-            do
-                rm -f *.out
+for receptor_file in "$RECEPTOR_DIR"/*.pdb; do
+    receptor=$(basename "$receptor_file" .pdb)
 
-                megadock-gpu -R ${Rcpt} -L ${Lgnd}
-                
-                for Out in $(ls *.out)
-                do
-                    rm -f Lgnd_Rot.pdb
-                    ${MEGADOCK_GPU}/decoygen Lgnd_Rot.pdb ${Lgnd} ${Out} 1
-                    
-                    sed -i -e 's/ A / Y /g' ./Lgnd_Rot.pdb
-                    head -n -2 ${Rcpt} > ${Rcpt}-${Lgnd}-complex.pdb
-                    cat ./Lgnd_Rot.pdb >> ${Rcpt}-${Lgnd}-complex.pdb
-                done
-            done
+    for ligand_file in "$LIGAND_DIR"/*.pdb; do
+        ligand=$(basename "$ligand_file" .pdb)
+
+        PAIR_DIR="${OUTPUT_DIR}/${receptor}-${ligand}"
+        mkdir -p "$PAIR_DIR"
+        cd "$PAIR_DIR" || exit 1
+
+        rm -f *.out
+        megadock-gpu -R "$START_DIR/$receptor_file" -L "$START_DIR/$ligand_file"
+
+        for out_file in *.out; do
+            [ -e "$out_file" ] || continue
+
+            rm -f Lgnd_Rot.pdb
+            ${MEGADOCK_GPU}/decoygen Lgnd_Rot.pdb "$START_DIR/$ligand_file" "$out_file" 1
+
+            sed -i -e 's/ A / Y /g' Lgnd_Rot.pdb
+
+            head -n -2 "$START_DIR/$receptor_file" > "${receptor}-${ligand}-complex.pdb"
+            cat Lgnd_Rot.pdb >> "${receptor}-${ligand}-complex.pdb"
         done
-        
-        cd ..
+
+        cd "$START_DIR" || exit 1
     done
 done

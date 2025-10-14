@@ -41,7 +41,6 @@ RUN ln -s ${MEGADOCK_WORK_DIR}/megadock-gpu /usr/local/bin/megadock-gpu && \
 # ADDITIONAL PART
 RUN apt update
 RUN apt install dos2unix
-RUN pip install --no-cache-dir prodigy-prot
 
 COPY run_multi_megadock.sh /app/run_multi_megadock.sh
 RUN chmod +x /app/run_multi_megadock.sh
