@@ -8,8 +8,8 @@ services:
     volumes:
       - ./data/input:/root/af_input
       - ./data/output/alphafold3:/root/af_output
-      - ./models:/root/models
-      - ./af_public_databases:/root/public_databases
+      - ${AF_MODELS_DIR}:/root/models
+      - ${AF_PUBLIC_DB_DIR}:/root/public_databases
 
   megadock:
     container_name: megadock_container
