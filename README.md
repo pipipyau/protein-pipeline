@@ -34,7 +34,7 @@ This pipeline combines RFdiffusion for protein design with MEGADOCK for protein 
 git clone https://github.com/akiyamalab/MEGADOCK
 ```
 
-* Добавить скрипт `utils/run_multi_megadock.sh`.
+* Добавить скрипт из `utils/run_multi_megadock.sh` в 3rdparty/megadock.
 
 ---
 
