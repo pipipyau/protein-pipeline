@@ -14,7 +14,7 @@ services:
   megadock:
     container_name: megadock_container
     build:
-      context: ./3rdparty/magadock
+      context: ./3rdparty/megadock
       dockerfile: ./../../docker/megadock/Dockerfile
     deploy:
       resources:

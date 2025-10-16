@@ -1,5 +1,5 @@
-[submodule "3rdparty/magadock"]
-	path = 3rdparty/magadock
+[submodule "3rdparty/megadock"]
+	path = 3rdparty/megadock
 	url = https://github.com/akiyamalab/MEGADOCK.git
 [submodule "3rdparty/alphafold3"]
 	path = 3rdparty/alphafold3
