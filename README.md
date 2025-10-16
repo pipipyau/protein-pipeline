@@ -14,9 +14,12 @@ This pipeline combines RFdiffusion for protein design with MEGADOCK for protein 
 ---
 
 ## 1. AlphaFold 3 Pipeline
-[-] TODO: update section 1.
+- [ ] TODO: update section 1.
 
-Used [repo](https://github.com/google-deepmind/alphafold3?ysclid=mgot4mzvap467461191).
+### Installation
+
+* Клонировать [репозиторий](https://github.com/google-deepmind/alphafold3?ysclid=mgot4mzvap467461191) в 3rdparty/alphafold3.
+* Добавить модель в `models`, базы данных в `af_public_databases`.
 
 Установка по [инструкции](https://github.com/google-deepmind/alphafold3/blob/main/docs/installation.md). 
 
@@ -25,21 +28,20 @@ Used [repo](https://github.com/google-deepmind/alphafold3?ysclid=mgot4mzvap46746
 
 ### Installation
 
-Клонировать репозиторий Megadock.
+* Клонировать репозиторий Megadock в 3rdparty/megadock.
 
-Requires MEGADOCK-GPU (non-MPI version):
 ```bash
 git clone https://github.com/akiyamalab/MEGADOCK
 ```
 
-Обновить докерфайл на файл `megadock-patry\Dockerfile` и добавить скрипт `megadock-patry\run_multi_megadock.sh`.
+* Добавить скрипт `utils/run_multi_megadock.sh`.
 
 ---
 
 ## 3. Binding Affinity Calculation
 
 **Output Analysis:**  
-The results in `affinity.csv` can be used for binding affinity analysis and visualization.
+The results in `data/output/prodigy/affinity.csv` can be used for binding affinity analysis and visualization.
 
 ---
 
@@ -47,7 +49,8 @@ The results in `affinity.csv` can be used for binding affinity analysis and visu
 * Установить Docker.
 * Выполнить шаги по установке из пунктов 1-3.
 * Создать структуру папок с помощью `utils/create_folders.py`.
-* Запустить `./start.sh`.
+* Запустить `./init.sh` для сборки контейнеров.
+* Запустить `./start.sh` для запуска пайплайна.
 
 ## Pipeline Overview
 ```mermaid
