@@ -42,6 +42,6 @@ RUN ln -s ${MEGADOCK_WORK_DIR}/megadock-gpu /usr/local/bin/megadock-gpu && \
 RUN apt update
 RUN apt install dos2unix
 
-COPY run_multi_megadock.sh /app/run_multi_megadock.sh
+COPY ./run_multi_megadock.sh /app/run_multi_megadock.sh
 RUN chmod +x /app/run_multi_megadock.sh
 RUN dos2unix /app/run_multi_megadock.sh

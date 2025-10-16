@@ -1,0 +1,6 @@
+[submodule "3rdparty/magadock"]
+	path = 3rdparty/magadock
+	url = https://github.com/akiyamalab/MEGADOCK.git
+[submodule "3rdparty/alphafold3"]
+	path = 3rdparty/alphafold3
+	url = https://github.com/google-deepmind/alphafold3.git

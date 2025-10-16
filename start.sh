@@ -35,7 +35,6 @@ Description:
 EOF
 }
 
-# Обработка аргументов
 if [[ "$1" == "--help" || "$1" == "-h" ]]; then
     show_help
     exit 0
@@ -45,6 +44,10 @@ echo "Starting containers..."
 docker-compose up -d
 
 sleep 10
+
+# TODO
+# echo "Alphafold3 for ligand..."
+# echo "Alphafold3 for receptor..."
 
 echo "Run Megadock..."
 docker exec megadock_container ./run_multi_megadock.sh
