@@ -41,9 +41,9 @@ def process_folder(input_folder: str) -> None:
             if file.endswith(".cif"):
                 cif_path = os.path.join(root, file)
                 pdb_path_original = os.path.splitext(cif_path)[0] + ".pdb"
-                pdb_path_output = os.path.join(output_folder,
-                                               os.path.relpath(pdb_path_original,
-                                                               input_folder))
+                pdb_path_output = os.path.join(
+                    output_folder, os.path.relpath(pdb_path_original, input_folder)
+                )
 
                 # Create necessary subdirectories in the output folder
                 os.makedirs(os.path.dirname(pdb_path_output), exist_ok=True)
@@ -54,15 +54,13 @@ def process_folder(input_folder: str) -> None:
 
 
 if __name__ == "__main__":
-    # Input folder path
-    parser = argparse.ArgumentParser(description='cif to PDB')
-    parser.add_argument('indir', type=str, help='Path to the input folder')
+    parser = argparse.ArgumentParser(description="cif to PDB")
+    parser.add_argument("indir", type=str, help="Path to the input folder")
     args = parser.parse_args()
     input_folder = args.indir
 
     if os.path.isdir(input_folder):
         process_folder(input_folder)
-        print(
-            f"Conversion completed for all .cif files. Output folder: {input_folder}")
+        print(f"Conversion completed for all .cif files. Output folder: {input_folder}")
     else:
         print(f"Invalid folder path: {input_folder}")
