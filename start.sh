@@ -4,19 +4,20 @@ show_help() {
 Usage: ./start.sh [options]
 
 Options:
-  -h, --help       Show this help message and exit
+  -h, --help       Показать это сообщение и выйти
 
-Description:
-  Этот скрипт запускает контейнеры с Megadock и Prodigy, выполняет последовательность
-  расчётов, парсинг и экспорт результатов, а затем останавливает контейнеры.
+Описание:
+  Этот скрипт автоматизирует биоинформатический пайплайн, включая запуск контейнеров,
+  конвертацию входных данных, структурное моделирование, молекулярный докинг, оценку взаимодействий
+  и экспорт результатов.
 
 Структура директорий:
   data/
   ├── input/                        # Входные данные для обработки
-  |   ├── ligand/                   # Структуры лигандов
-  |   └── receptor/                 # Структуры рецепторов
+  │   ├── ligand/                   # Структуры лигандов (FASTA)
+  │   └── receptor/                 # Структуры рецепторов (FASTA)
   └── output/
-      ├── alphafold3/               # Результаты от Alphafold3 (PDB)
+      ├── alphafold3/               # Результаты от AlphaFold3 (PDB)
       │   ├── ligand/
       │   └── receptor/
       ├── megadock/                 # Результаты от Megadock (PDB)
@@ -24,11 +25,14 @@ Description:
 
 Операции скрипта:
   1. Запускает Docker-контейнеры с помощью docker-compose.
-  2. Ожидает 10 секунд для их инициализации.
-  3. Выполняет docking с помощью Megadock.
-  4. Запускает Prodigy.
-  5. Парсит результаты Prodigy и экспортирует их в csv.
-  6. Останавливает контейнеры.
+  2. Ожидает 10 секунд для инициализации контейнеров.
+  3. Конвертирует входные FASTA-файлы в JSON (fasta2json).
+  4. Выполняет структурное моделирование с помощью AlphaFold3 (лиганды и рецепторы).
+  5. Конвертирует результаты AlphaFold3 из CIF в PDB (cif2pdb).
+  6. Выполняет docking с помощью Megadock.
+  7. Запускает анализ взаимодействий с помощью Prodigy.
+  8. Парсит результаты Prodigy и экспортирует их в CSV.
+  9. Останавливает контейнеры.
 
 Пример запуска:
   ./start.sh
@@ -46,19 +50,16 @@ docker-compose up -d
 sleep 10
 
 echo "Run fasta2json conversion..."
-python3 utils/fasta2json.py data/input
-# TODO
-# echo "Alphafold3 for ligand..."
-# docker exec alphafold3_container python run_alphafold.py --json_path=/root/af_input/ligand/fold_input.json --model_dir=/root/models --output_dir=/root/af_output/ligand
+python utils/fasta2json.py data/input
 
-# echo "Alphafold3 for receptor..."
-# docker exec alphafold3_container python run_alphafold.py \
-#     --json_path=/root/af_input/receptor/fold_input.json \
-#     --model_dir=/root/models \
-#     --output_dir=/root/af_output/receptor
+echo "Alphafold3 for ligand..."
+docker exec alphafold3_container python run_alphafold.py --json_path=/root/af_input/ligand/fold_input.json --model_dir=/root/models --output_dir=/root/af_output/ligand
+
+echo "Alphafold3 for receptor..."
+docker exec alphafold3_container python run_alphafold.py --json_path=/root/af_input/receptor/fold_input.json --model_dir=/root/models --output_dir=/root/af_output/receptor
 
 echo "Run cif2pdb conversion..."
-python3 utils/cif2pdb.py data/alphafold3/output
+python utils/cif2pdb.py data/output/alphafold3
 
 echo "Run Megadock..."
 docker exec megadock_container ./run_multi_megadock.sh
