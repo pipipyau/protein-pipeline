@@ -32,8 +32,8 @@ git pull --recurse-submodules
 ## Pipeline Overview
 ```mermaid
 graph TD
-    A[AlphaFold3] --> B[Docking (MEGADOCK)]
-    B --> C[Affinity calculation (Prodigy)]
+    A[Modeling by AlphaFold3] --> B[Docking by Megadock]
+    B --> C[Affinity calculation by Prodigy]
     C --> D[Export to csv]
 ```
 
