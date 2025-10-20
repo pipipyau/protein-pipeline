@@ -6,6 +6,9 @@ OUTPUT_DIR="output"
 MEGADOCK_GPU="/usr/local/bin"
 START_DIR=$(pwd)
 
+receptor_files=$(find $RECEPTOR_DIR -name "*_sample*.pdb" -type f)
+ligand_files=$(find $LIGAND_DIR -name "*_sample*.pdb" -type f)
+
 for receptor_file in "$RECEPTOR_DIR"/*.pdb; do
     receptor=$(basename "$receptor_file" .pdb)
 
