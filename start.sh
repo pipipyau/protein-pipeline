@@ -47,7 +47,13 @@ sleep 10
 
 # TODO
 # echo "Alphafold3 for ligand..."
+# docker exec alphafold3_container python run_alphafold.py --json_path=/root/af_input/ligand/fold_input.json --model_dir=/root/models --output_dir=/root/af_output/ligand
+
 # echo "Alphafold3 for receptor..."
+# docker exec alphafold3_container python run_alphafold.py \
+#     --json_path=/root/af_input/receptor/fold_input.json \
+#     --model_dir=/root/models \
+#     --output_dir=/root/af_output/receptor
 
 echo "Run Megadock..."
 docker exec megadock_container ./run_multi_megadock.sh

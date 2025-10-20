@@ -3,10 +3,11 @@ import os
 import shutil
 from Bio.PDB import MMCIFParser, PDBIO
 
+
 def convert_cif_to_pdb(cif_file: str, pdb_file: str) -> None:
     """
     Convert a CIF file to PDB format.
-    
+
     Parameters:
     - cif_file (str): Path to the input CIF file.
     - pdb_file (str): Path to the output PDB file.
@@ -27,7 +28,7 @@ def process_folder(input_folder: str) -> None:
     """
     Recursively find all .cif files in the input folder, convert them to .pdb files,
     and save to both the original location and the output folder.
-    
+
     Parameters:
     - input_folder (str): Path to the input folder containing .cif files.
     """
@@ -42,7 +43,7 @@ def process_folder(input_folder: str) -> None:
                 pdb_path_original = os.path.splitext(cif_path)[0] + ".pdb"
                 pdb_path_output = os.path.join(output_folder,
                                                os.path.relpath(pdb_path_original,
-                                               input_folder))
+                                                               input_folder))
 
                 # Create necessary subdirectories in the output folder
                 os.makedirs(os.path.dirname(pdb_path_output), exist_ok=True)
@@ -51,15 +52,17 @@ def process_folder(input_folder: str) -> None:
                 convert_cif_to_pdb(cif_path, pdb_path_original)
                 shutil.copy(pdb_path_original, pdb_path_output)
 
+
 if __name__ == "__main__":
     # Input folder path
     parser = argparse.ArgumentParser(description='cif to PDB')
     parser.add_argument('indir', type=str, help='Path to the input folder')
     args = parser.parse_args()
     input_folder = args.indir
-    
+
     if os.path.isdir(input_folder):
         process_folder(input_folder)
-        print(f"Conversion completed for all .cif files. Output folder: {os.path.join(input_folder, 'output')}")
+        print(
+            f"Conversion completed for all .cif files. Output folder: {input_folder}")
     else:
         print(f"Invalid folder path: {input_folder}")
