@@ -221,12 +221,8 @@ def process_folder(input_folder: str) -> None:
     and save to both the original location and the output folder.
 
     Parameters:
-    - input_folder (str): Path to the input folder containing .cif files.
+    - input_folder (str): Path to the input folder containing .fasta files.
     """
-    output_folder = os.path.join(input_folder, "output")
-    if not os.path.exists(output_folder):
-        os.makedirs(output_folder)
-
     for root, _, files in os.walk(input_folder):
         for file in files:
             if file.endswith(".fasta"):

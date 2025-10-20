@@ -32,25 +32,14 @@ def process_folder(input_folder: str) -> None:
     Parameters:
     - input_folder (str): Path to the input folder containing .cif files.
     """
-    output_folder = os.path.join(input_folder, "output")
-    if not os.path.exists(output_folder):
-        os.makedirs(output_folder)
 
     for root, _, files in os.walk(input_folder):
         for file in files:
             if file.endswith(".cif"):
                 cif_path = os.path.join(root, file)
                 pdb_path_original = os.path.splitext(cif_path)[0] + ".pdb"
-                pdb_path_output = os.path.join(
-                    output_folder, os.path.relpath(pdb_path_original, input_folder)
-                )
-
-                # Create necessary subdirectories in the output folder
-                os.makedirs(os.path.dirname(pdb_path_output), exist_ok=True)
-
                 # Convert and save to both locations
                 convert_cif_to_pdb(cif_path, pdb_path_original)
-                shutil.copy(pdb_path_original, pdb_path_output)
 
 
 if __name__ == "__main__":
