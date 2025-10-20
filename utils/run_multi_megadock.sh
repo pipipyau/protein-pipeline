@@ -6,13 +6,10 @@ OUTPUT_DIR="output"
 MEGADOCK_GPU="/usr/local/bin"
 START_DIR=$(pwd)
 
-receptor_files=$(find $RECEPTOR_DIR -name "*_sample*.pdb" -type f)
-ligand_files=$(find $LIGAND_DIR -name "*_sample*.pdb" -type f)
-
-for receptor_file in "$RECEPTOR_DIR"/*.pdb; do
+find "$RECEPTOR_DIR" -name "*_sample*.pdb" -type f | while IFS= read -r receptor_file; do
     receptor=$(basename "$receptor_file" .pdb)
 
-    for ligand_file in "$LIGAND_DIR"/*.pdb; do
+    find "$LIGAND_DIR" -name "*_sample*.pdb" -type f | while IFS= read -r ligand_file; do
         ligand=$(basename "$ligand_file" .pdb)
 
         PAIR_DIR="${OUTPUT_DIR}/${receptor}-${ligand}"
