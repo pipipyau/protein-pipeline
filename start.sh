@@ -45,6 +45,8 @@ docker-compose up -d
 
 sleep 10
 
+echo "Run fasta2json conversion..."
+python3 utils/fasta2json.py data/input
 # TODO
 # echo "Alphafold3 for ligand..."
 # docker exec alphafold3_container python run_alphafold.py --json_path=/root/af_input/ligand/fold_input.json --model_dir=/root/models --output_dir=/root/af_output/ligand
@@ -54,6 +56,9 @@ sleep 10
 #     --json_path=/root/af_input/receptor/fold_input.json \
 #     --model_dir=/root/models \
 #     --output_dir=/root/af_output/receptor
+
+echo "Run cif2pdb conversion..."
+python3 utils/cif2pdb.py data/alphafold3/output
 
 echo "Run Megadock..."
 docker exec megadock_container ./run_multi_megadock.sh
