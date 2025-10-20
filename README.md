@@ -32,9 +32,11 @@ git pull --recurse-submodules
 ## Pipeline Overview
 ```mermaid
 graph TD
-    A[Modeling by AlphaFold3] --> B[Docking by Megadock]
-    B --> C[Affinity calculation by Prodigy]
-    C --> D[Export to csv]
+    Start[Input] -->|receptor & ligand .fasta files| A[Modeling by AlphaFold3]
+    A -->|PDB files| B[Docking by Megadock]
+    B -->|PDB files| C[Affinity calculation by Prodigy]
+    C -->|txt| D[Export to csv]
+    D -->|results.csv| End[Output]
 ```
 
 ## Настройка модулей
