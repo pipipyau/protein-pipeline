@@ -8,7 +8,7 @@ This pipeline combines RFdiffusion for protein design with MEGADOCK for protein 
 ## Table of Contents
 1. [How to start?](#how-to-start)
 2. [Pipeline Overview](#pipeline-overview)
-3. [AlphaFold 3 Pipeline](#1-alphafold-3-pipeline)
+3. [AlphaFold3](#1-alphafold3)
 4. [Protein Docking with MEGADOCK](#2-protein-docking-with-megadock)
 5. [Binding Affinity Calculation](#3-binding-affinity-calculation)
 
@@ -22,29 +22,32 @@ git submodule init
 git submodule update
 git pull --recurse-submodules
 ```
-* Выполнить шаги по установке из пунктов 1-3.
+* Выполнить шаги по установке из пунктов [AlphaFold3](#1-alphafold3) и [Protein Docking with MEGADOCK](#2-protein-docking-with-megadock).
 * Скопировать файл `.env.template` с именем `.env` и заполнить переменные окружения.
 * Создать структуру папок с помощью `utils/create_folders.py`.
+* Добавить входные файлы в формате .fasta или .json (важно: json со [структурой, требуемой Alphafold3](https://github.com/google-deepmind/alphafold3/blob/main/docs/input.md)) в папки `data/input/ligand` и `data/input/receptor`.
 * Запустить `./init.sh` для сборки контейнеров.
 * Запустить `./start.sh` для запуска пайплайна.
 
 ## Pipeline Overview
 ```mermaid
 graph TD
-    A[AlphaFold3] --> B[MEGADOCK Docking]
-    B --> C[Prodigy Affinity]
-    C --> D[Export]
+    A[AlphaFold3] --> B[Docking (MEGADOCK)]
+    B --> C[Affinity calculation (Prodigy)]
+    C --> D[Export to csv]
 ```
 
 ## Настройка модулей
 
-### 1. AlphaFold 3 Pipeline
-- [ ] TODO: update section 1.
+### 1. AlphaFold3
 
-* [Репозиторий](https://github.com/google-deepmind/alphafold3?ysclid=mgot4mzvap467461191) в 3rdparty/alphafold3.
-* Добавить модель в `models`, базы данных в `af_public_databases`.
+Использован [репозиторий](https://github.com/google-deepmind/alphafold3?ysclid=mgot4mzvap467461191) в 3rdparty/alphafold3.
 
-Установка по [инструкции](https://github.com/google-deepmind/alphafold3/blob/main/docs/installation.md). 
+**Предварительно необходимо:**
+* Добавить модель в `models` (разрешение на использование модели и ее параметры нужно запросить по [инструкции](https://github.com/google-deepmind/alphafold3/tree/main?tab=readme-ov-file#obtaining-model-parameters)).
+* Базы данных в `af_public_databases`.
+
+Подробнее можно поcмотреть в [оригинальной инструкции](https://github.com/google-deepmind/alphafold3/blob/main/docs/installation.md). 
 
 #### Распаковка весов 
 
@@ -84,7 +87,7 @@ unpack_databases.sh <archive dir> <target dir>
 
 ### 3. Binding Affinity Calculation
 
-**Output Analysis:**  
-The results in `data/output/prodigy/affinity.csv` can be used for binding affinity analysis and visualization.
+**Output Analysis:**
+Результаты сохраняются в виде csv файла по пути `data/output/prodigy/affinity.csv`.
 
 ---
