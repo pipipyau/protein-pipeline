@@ -4,10 +4,10 @@ MAINTAINER Akiyama Laboratory, Tokyo Institute of Technology <megadock@bi.cs.tit
 
 RUN apt-get update -y
 RUN apt-get install -y --no-install-recommends \
-                wget \
-                make \
-                g++ \
-                cuda-samples-11-1 \
+    wget \
+    make \
+    g++ \
+    cuda-samples-11-1 \
     && rm -rf /var/lib/apt/lists/*
 
 # FFTW

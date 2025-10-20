@@ -1,3 +1,4 @@
 data
 models
 af_public_databases
+.env

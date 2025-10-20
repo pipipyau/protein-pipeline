@@ -19,5 +19,6 @@ if [[ "$1" == "--help" || "$1" == "-h" ]]; then
     exit 0
 fi
 
+cp ./utils/run_multi_megadock.sh 3rdparty/megadock/run_multi_megadock.sh
 docker-compose down
 docker-compose build

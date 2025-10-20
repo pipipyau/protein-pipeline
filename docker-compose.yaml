@@ -5,11 +5,21 @@ services:
     build:
       context: ./3rdparty/alphafold3
       dockerfile: ./docker/Dockerfile
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - capabilities: [gpu]
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
     volumes:
       - ./data/input:/root/af_input
       - ./data/output/alphafold3:/root/af_output
-      - ./models:/root/models
-      - ./af_public_databases:/root/public_databases
+      - ${AF_MODELS_DIR}:/root/models
+      - ${AF_PUBLIC_DB_DIR}:/root/public_databases
+    tty: true
+    stdin_open: true
+    command: [ "sleep", "infinity" ]
 
   megadock:
     container_name: megadock_container
