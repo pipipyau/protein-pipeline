@@ -63,6 +63,7 @@ WORKDIR /app/alphafold
 RUN pip3 install --no-cache-dir setuptools \
     && pip3 install --no-cache-dir -r dev-requirements.txt \
     && pip3 install --no-cache-dir --no-deps .
+
 # Build chemical components database (this binary was installed by pip).
 RUN build_data
 
@@ -76,3 +77,5 @@ ENV XLA_FLAGS="--xla_gpu_enable_triton_gemm=false"
 # Memory settings used for folding up to 5,120 tokens on A100 80 GB.
 ENV XLA_PYTHON_CLIENT_PREALLOCATE=true
 ENV XLA_CLIENT_MEM_FRACTION=0.95
+
+RUN python -m pip install abcfold
