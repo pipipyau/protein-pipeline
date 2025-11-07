@@ -4,3 +4,6 @@
 [submodule "3rdparty/alphafold3"]
 	path = 3rdparty/alphafold3
 	url = https://github.com/google-deepmind/alphafold3.git
+[submodule "3rdparty/abcfold"]
+	path = 3rdparty/abcfold
+	url = https://github.com/rigdenlab/ABCFold.git
