@@ -21,27 +21,27 @@ services:
     stdin_open: true
     command: [ "sleep", "infinity" ]
 
-  abcfold:
-    container_name: abcfold_container
-    build:
-      context: ./3rdparty/abcfold
-      dockerfile: ./../../docker/abcfold/Dockerfile
-    deploy:
-      resources:
-        reservations:
-          devices:
-            - capabilities: [gpu]
-    environment:
-      - NVIDIA_VISIBLE_DEVICES=all
-    volumes:
-      - ./data/input:/root/af_input
-      - ./data/output/abcfold:/root/af_output
-      - ${AF_MODELS_DIR}:/root/models
-      - ${AF_PUBLIC_DB_DIR}:/root/public_databases
-    working_dir: /root
-    tty: true
-    stdin_open: true
-    command: [ "sleep", "infinity" ]
+  # abcfold:
+  #   container_name: abcfold_container
+  #   build:
+  #     context: ./3rdparty/abcfold
+  #     dockerfile: ./../../docker/abcfold/Dockerfile
+  #   deploy:
+  #     resources:
+  #       reservations:
+  #         devices:
+  #           - capabilities: [gpu]
+  #   environment:
+  #     - NVIDIA_VISIBLE_DEVICES=all
+  #   volumes:
+  #     - ./data/input:/root/af_input
+  #     - ./data/output/abcfold:/root/af_output
+  #     - ${AF_MODELS_DIR}:/root/models
+  #     - ${AF_PUBLIC_DB_DIR}:/root/public_databases
+  #   working_dir: /root
+  #   tty: true
+  #   stdin_open: true
+  #   command: [ "sleep", "infinity" ]
 
   megadock:
     container_name: megadock_container

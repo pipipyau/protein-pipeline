@@ -17,7 +17,7 @@ FROM nvidia/cuda:12.6.3-base-ubuntu24.04
 # * zlib is a required dependency of AlphaFold 3.
 RUN DEBIAN_FRONTEND=noninteractive \
     apt-get update --quiet \
-    && apt-get install --yes --quiet python3.12 python3-pip python3.12-venv python3.12-dev \
+    && apt-get install --yes --quiet python3.11 python3-pip python3.11-venv python3.11-dev \
     && apt-get install --yes --quiet git wget gcc g++ make zlib1g-dev zstd
 
 # The base image uses Python 3.12. For local installation use 3.11 or greater.
@@ -77,3 +77,5 @@ ENV XLA_FLAGS="--xla_gpu_enable_triton_gemm=false"
 # Memory settings used for folding up to 5,120 tokens on A100 80 GB.
 ENV XLA_PYTHON_CLIENT_PREALLOCATE=true
 ENV XLA_CLIENT_MEM_FRACTION=0.95
+
+RUN python -m pip install abcfold
