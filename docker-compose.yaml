@@ -4,7 +4,7 @@ services:
     container_name: alphafold3_container
     build:
       context: ./3rdparty/alphafold3
-      dockerfile: ./docker/Dockerfile
+      dockerfile: ./../../docker/alphafold3/Dockerfile
     deploy:
       resources:
         reservations:
