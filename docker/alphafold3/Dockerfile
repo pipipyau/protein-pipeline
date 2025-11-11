@@ -17,12 +17,12 @@ FROM nvidia/cuda:12.6.3-base-ubuntu24.04
 # * zlib is a required dependency of AlphaFold 3.
 RUN DEBIAN_FRONTEND=noninteractive \
     apt-get update --quiet \
-    && apt-get install --yes --quiet python3.11 python3-pip python3.11-venv python3.11-dev \
+    && apt-get install --yes --quiet python3.12 python3-pip python3.12-venv python3.12-dev \
     && apt-get install --yes --quiet git wget gcc g++ make zlib1g-dev zstd
 
 # The base image uses Python 3.12. For local installation use 3.11 or greater.
 RUN python3 -m venv /alphafold3_venv
-ENV PATH="/hmmer/bin:/alphafold3_venv/bin:$PATH"
+ENV PATH="alphafold3/hmmer/bin:/alphafold3_venv/bin:$PATH"
 # Update pip to the latest version. Not necessary in Docker, but good to do when
 # this is used as a recipe for local installation since we rely on new pip
 # features for secure installs.
@@ -43,7 +43,7 @@ RUN mkdir /hmmer_build /hmmer ; \
     (cd /hmmer_build && tar zxf hmmer-3.4.tar.gz && rm hmmer-3.4.tar.gz)
 
 # Apply the --seq_limit patch to HMMER.
-COPY docker/jackhmmer_seq_limit.patch /hmmer_build/
+COPY alphafold3/docker/jackhmmer_seq_limit.patch /hmmer_build/
 RUN (cd /hmmer_build && patch -p0 < jackhmmer_seq_limit.patch)
 
 # Build HMMER.
@@ -55,7 +55,7 @@ RUN (cd /hmmer_build/hmmer-3.4 && ./configure --prefix /hmmer) ; \
 
 # Copy the AlphaFold 3 source code from the local machine to the container and
 # set the working directory to there.
-COPY . /app/alphafold
+COPY alphafold3 /app/alphafold
 WORKDIR /app/alphafold
 
 # Install setuptools (removed in Python 3.12) which some libraries still need.
@@ -63,6 +63,9 @@ WORKDIR /app/alphafold
 RUN pip3 install --no-cache-dir setuptools \
     && pip3 install --no-cache-dir -r dev-requirements.txt \
     && pip3 install --no-cache-dir --no-deps .
+
+COPY abcfold /app/abcfold
+RUN cd /app/abcfold && python3 -m pip install .
 
 # Build chemical components database (this binary was installed by pip).
 RUN build_data
@@ -77,5 +80,3 @@ ENV XLA_FLAGS="--xla_gpu_enable_triton_gemm=false"
 # Memory settings used for folding up to 5,120 tokens on A100 80 GB.
 ENV XLA_PYTHON_CLIENT_PREALLOCATE=true
 ENV XLA_CLIENT_MEM_FRACTION=0.95
-
-RUN python -m pip install abcfold
