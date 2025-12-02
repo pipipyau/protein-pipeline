@@ -61,6 +61,11 @@ if __name__ == "__main__":
         help="Path to the input JSON in AlphaFold3 format",
     )
     parser.add_argument(
+        "--output_json",
+        help="[optional] Specify the path of the output ABCFold json file, this \
+can be used to run subsequent runs of ABCFold with the same input features (e.g. MSA)",
+    )
+    parser.add_argument(
         "--mmseqs2",
         help="Use MMseqs2 for MSA generation and template \
 searching (if used with --templates flag)",
