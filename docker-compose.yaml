@@ -24,7 +24,6 @@ services:
   abcfold:
     container_name: abcfold_container
     build:
-      context: ./3rdparty/abcfold
       dockerfile: ./docker/abcfold/Dockerfile
     deploy:
       resources:
@@ -44,7 +43,7 @@ services:
     container_name: megadock_container
     build:
       context: ./3rdparty/megadock
-      dockerfile: ./docker/megadock/Dockerfile
+      dockerfile: ./../../docker/megadock/Dockerfile
     deploy:
       resources:
         reservations:
