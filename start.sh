@@ -52,17 +52,15 @@ sleep 10
 echo "Run fasta2json conversion..."
 python utils/fasta2json.py data/input
 
-echo "ABCFold for ligand..."
-docker exec alphafold3_container abcfold /root/af_input/ligand  /root/af_output/ligand -abc --mmseqs2 --model_params /root/models
-
-echo "Alphafold3 for ligand..."
-docker exec alphafold3_container python run_alphafold.py --input_dir=/root/af_input/ligand --model_dir=/root/models --output_dir=/root/af_output/ligand
-
 echo "ABCFold for receptor..."
-docker exec alphafold3_container abcfold /root/af_input/receptor  /root/af_output/receptor -abc --mmseqs2 --model_params /root/models
+docker exec abcfold_container MMSEQS_NO_INDEX=1 setup_mmseqs_databases.sh /root/public_databases #TODO: move to init
+docker exec abcfold_container python3.11 add_msa_to_json.py /root/af_input/receptor/rbdKFU.json --mmseqs_database=/root/public_databases
 
-echo "Alphafold3 for receptor..."
-docker exec alphafold3_container python run_alphafold.py --input_dir=/root/af_input/receptor --model_dir=/root/models --output_dir=/root/af_output/receptor
+# echo "Alphafold3 for ligand..."
+# docker exec alphafold3_container python run_alphafold.py --input_dir=/root/af_input/ligand --model_dir=/root/models --output_dir=/root/af_output/ligand
+
+# echo "Alphafold3 for receptor..."
+# docker exec alphafold3_container python run_alphafold.py --input_dir=/root/af_input/receptor --model_dir=/root/models --output_dir=/root/af_output/receptor
 
 echo "Run cif2pdb conversion..."
 python utils/cif2pdb.py data/output/alphafold3
