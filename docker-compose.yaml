@@ -3,8 +3,8 @@ services:
   alphafold3:
     container_name: alphafold3_container
     build:
-      context: ./3rdparty
-      dockerfile: ./../docker/alphafold3/Dockerfile
+      context: ./3rdparty/alphafold3
+      dockerfile: ./docker/alphafold3/Dockerfile
     deploy:
       resources:
         reservations:
@@ -20,12 +20,31 @@ services:
     tty: true
     stdin_open: true
     command: [ "sleep", "infinity" ]
+  
+  abcfold:
+    container_name: abcfold_container
+    build:
+      context: ./3rdparty/abcfold
+      dockerfile: ./docker/abcfold/Dockerfile
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - capabilities: [gpu]
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
+    volumes:
+      - ./data/input:/root/af_input
+      - ${MMSEQS_PUBLIC_DB_DIR}:/root/public_databases
+    tty: true
+    stdin_open: true
+    command: [ "sleep", "infinity" ]
 
   megadock:
     container_name: megadock_container
     build:
       context: ./3rdparty/megadock
-      dockerfile: ./../../docker/megadock/Dockerfile
+      dockerfile: ./docker/megadock/Dockerfile
     deploy:
       resources:
         reservations:

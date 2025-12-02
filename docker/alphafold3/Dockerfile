@@ -22,7 +22,7 @@ RUN DEBIAN_FRONTEND=noninteractive \
 
 # The base image uses Python 3.12. For local installation use 3.11 or greater.
 RUN python3 -m venv /alphafold3_venv
-ENV PATH="alphafold3/hmmer/bin:/alphafold3_venv/bin:$PATH"
+ENV PATH="/hmmer/bin:/alphafold3_venv/bin:$PATH"
 # Update pip to the latest version. Not necessary in Docker, but good to do when
 # this is used as a recipe for local installation since we rely on new pip
 # features for secure installs.
@@ -43,7 +43,7 @@ RUN mkdir /hmmer_build /hmmer ; \
     (cd /hmmer_build && tar zxf hmmer-3.4.tar.gz && rm hmmer-3.4.tar.gz)
 
 # Apply the --seq_limit patch to HMMER.
-COPY alphafold3/docker/jackhmmer_seq_limit.patch /hmmer_build/
+COPY docker/jackhmmer_seq_limit.patch /hmmer_build/
 RUN (cd /hmmer_build && patch -p0 < jackhmmer_seq_limit.patch)
 
 # Build HMMER.
@@ -55,7 +55,7 @@ RUN (cd /hmmer_build/hmmer-3.4 && ./configure --prefix /hmmer) ; \
 
 # Copy the AlphaFold 3 source code from the local machine to the container and
 # set the working directory to there.
-COPY alphafold3 /app/alphafold
+COPY . /app/alphafold
 WORKDIR /app/alphafold
 
 # Install setuptools (removed in Python 3.12) which some libraries still need.
@@ -63,10 +63,6 @@ WORKDIR /app/alphafold
 RUN pip3 install --no-cache-dir setuptools \
     && pip3 install --no-cache-dir -r dev-requirements.txt \
     && pip3 install --no-cache-dir --no-deps .
-
-COPY abcfold /app/abcfold
-RUN cd /app/abcfold && python3 -m pip install .
-
 # Build chemical components database (this binary was installed by pip).
 RUN build_data
 
