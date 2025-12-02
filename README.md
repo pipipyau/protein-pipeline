@@ -47,7 +47,10 @@ graph TD
 
 **Предварительно необходимо:**
 * Добавить модель в `models` (разрешение на использование модели и ее параметры нужно запросить по [инструкции](https://github.com/google-deepmind/alphafold3/tree/main?tab=readme-ov-file#obtaining-model-parameters)).
-* Базы данных в `af_public_databases`.
+* Базы данных в `af_public_databases`. Для использования [ABCFold](https://github.com/rigdenlab/ABCFold) необходимо скачать базы данных через скрипт в их репозитории:
+```bash
+MMSEQS_NO_INDEX=1 ./setup_mmseqs_databases.sh /root/public_databases
+```
 
 Подробнее можно поcмотреть в [оригинальной инструкции](https://github.com/google-deepmind/alphafold3/blob/main/docs/installation.md). 
 
