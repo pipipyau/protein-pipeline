@@ -53,10 +53,44 @@ echo "Run fasta2json conversion..."
 python utils/fasta2json.py data/input
 
 echo "Alphafold3 for ligand..."
-docker exec alphafold3_container python run_alphafold.py --input_dir=/root/af_input/ligand --model_dir=/root/models --output_dir=/root/af_output/ligand
+# Base version of Alphafold3
+# docker exec alphafold3_container python run_alphafold.py --input_dir=/root/af_input/ligand --model_dir=/root/models --output_dir=/root/af_output/ligand
+# Jackhmmer version of Alphafold3
+docker exec alphafold3_container python run_alphafold.py `
+    --input_dir=/root/af_input/ligand --model_dir=/root/models --output_dir=/root/af_output/ligand `
+    --small_bfd_database_path="/root/public_databases_1/bfd-first_non_consensus_sequences.fasta@64" `
+    --small_bfd_z_value=65984053 `
+    --rna_central_database_path="/root/public_databases_3/rnacentral_active_seq_id_90_cov_80_linclust.fasta@64" `
+    --rna_central_z_value=13271.415730 `
+    --rna_central_database_path="/root/public_databases_1/rnacentral_active_seq_id_90_cov_80_linclust.fasta@3" `
+    --rna_central_z_value=13271.415730 `
+    --rfam_database_path="/root/public_databases_3/rfam_14_9_clust_seq_id_90_cov_80_rep_seq.fasta@16" `
+    --rfam_z_value=138.115553 `
+    --jackhmmer_n_cpu=8 `
+    --jackhmmer_max_parallel_shards=16 `
+    --nhmmer_n_cpu=8 `
+    --nhmmer_max_parallel_shards=16 `
+    --db_dir=/root/public_databases_1 --db_dir=/root/public_databases_2 --db_dir=/root/public_databases_3
 
 echo "Alphafold3 for receptor..."
-docker exec alphafold3_container python run_alphafold.py --input_dir=/root/af_input/receptor --model_dir=/root/models --output_dir=/root/af_output/receptor
+# Base version of Alphafold3
+# docker exec alphafold3_container python run_alphafold.py --input_dir=/root/af_input/receptor --model_dir=/root/models --output_dir=/root/af_output/receptor
+# Jackhmmer version of Alphafold3
+docker exec alphafold3_container python run_alphafold.py `
+    --input_dir=/root/af_input/receptor --model_dir=/root/models --output_dir=/root/af_output/receptor `
+    --small_bfd_database_path="/root/public_databases_1/bfd-first_non_consensus_sequences.fasta@64" `
+    --small_bfd_z_value=65984053 `
+    --rna_central_database_path="/root/public_databases_3/rnacentral_active_seq_id_90_cov_80_linclust.fasta@64" `
+    --rna_central_z_value=13271.415730 `
+    --rna_central_database_path="/root/public_databases_1/rnacentral_active_seq_id_90_cov_80_linclust.fasta@3" `
+    --rna_central_z_value=13271.415730 `
+    --rfam_database_path="/root/public_databases_3/rfam_14_9_clust_seq_id_90_cov_80_rep_seq.fasta@16" `
+    --rfam_z_value=138.115553 `
+    --jackhmmer_n_cpu=8 `
+    --jackhmmer_max_parallel_shards=16 `
+    --nhmmer_n_cpu=8 `
+    --nhmmer_max_parallel_shards=16 `
+    --db_dir=/root/public_databases_1 --db_dir=/root/public_databases_2 --db_dir=/root/public_databases_3
 
 echo "Run cif2pdb conversion..."
 python utils/cif2pdb.py data/output/alphafold3
