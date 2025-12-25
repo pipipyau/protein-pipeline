@@ -6,11 +6,15 @@
 This pipeline combines RFdiffusion for protein design with MEGADOCK for protein docking and Prodigy for binding affinity calculations.
 
 ## Table of Contents
-1. [How to start?](#how-to-start)
-2. [Pipeline Overview](#pipeline-overview)
-3. [AlphaFold3](#1-alphafold3)
-4. [Protein Docking with MEGADOCK](#2-protein-docking-with-megadock)
-5. [Binding Affinity Calculation](#3-binding-affinity-calculation)
+- [AlphaFold3 \& Docking Pipeline](#alphafold3--docking-pipeline)
+  - [Table of Contents](#table-of-contents)
+  - [How to start](#how-to-start)
+  - [Pipeline Overview](#pipeline-overview)
+  - [Настройка модулей](#настройка-модулей)
+    - [1. AlphaFold3](#1-alphafold3)
+      - [Распаковка весов](#распаковка-весов)
+    - [2. Protein Docking with MEGADOCK](#2-protein-docking-with-megadock)
+    - [3. Binding Affinity Calculation](#3-binding-affinity-calculation)
 
 ---
 
@@ -53,23 +57,33 @@ graph TD
 
 #### Распаковка весов 
 
-```bash
-unpack_databases.sh <archive dir> <target dir>
-```
+Необходимое место для баз:
+| Файл / папка                                                | Размер, Gb |
+|-------------------------------------------------------------|------------|
+| rnacentral_active_seq_id_90_cov_80_linclust.fasta           | 13.6       |
+| mgy_clusters_2022_05.fa                                     | 125.6      |
+| bfd-first_non_consensus_sequences.fasta                     | 17.75      |
+| uniref90_2022_05.fa                                         | 70.2       |
+| uniprot_all_2021_04.fa                                      | 106        |
+| pdb_seqres_2022_09_28.fasta                                 | 0.25       |
+| rfam_14_9_clust_seq_id_90_cov_80_rep_seq.fasta              | 0.24       |
+| nt_rna_2023_02_23_clust_seq_id_90_cov_80_rep_seq.fasta      | 70.1       |
+| mmcif_files (folder)                                        | 233        |
+| **Всего**                                                   | **636.74** |
+
+Для разархивации использовать команды ниже. Базы не обязательно хранить на одном диске, лучше использовать SSD. 
+Для ускорения поиска MSA можно использовать сегментированные базы (см. скрипт `create_sharded_db.sh`) - тогда команда запуска меняется (см. файл `start.sh`).
 
 ```bash
 .\zstd.exe -d Z:\distr\AF-RFD-Pipeline\AF3\public_databases\pdb_2022_09_28_mmcif_files.tar.zst -o F:\AF-RFD\public_databases\pdb_2022_09_28_mmcif_files.tar
-+
 
 .\zstd.exe -d Z:\distr\AF-RFD-Pipeline\AF3\public_databases\pdb_seqres_2022_09_28.fasta.zst -o F:\AF-RFD\public_databases\pdb_seqres_2022_09_28.fasta
-
 
 .\zstd.exe -d Z:\distr\AF-RFD-Pipeline\AF3\public_databases\bfd-first_non_consensus_sequences.fasta.zst -o F:\AF-RFD\public_databases\bfd-first_non_consensus_sequences.fasta
 
 .\zstd.exe -d Z:\distr\AF-RFD-Pipeline\AF3\public_databases\mgy_clusters_2022_05.fa.zst -o F:\AF-RFD\public_databases\mgy_clusters_2022_05.fa
 
 .\zstd.exe -d Z:\distr\AF-RFD-Pipeline\AF3\public_databases\nt_rna_2023_02_23_clust_seq_id_90_cov_80_rep_seq.fasta.zst -o F:\AF-RFD\public_databases\nt_rna_2023_02_23_clust_seq_id_90_cov_80_rep_seq.fasta
-
 
 .\zstd.exe -d Z:\distr\AF-RFD-Pipeline\AF3\public_databases\rfam_14_9_clust_seq_id_90_cov_80_rep_seq.fasta.zst -o F:\AF-RFD\public_databases\rfam_14_9_clust_seq_id_90_cov_80_rep_seq.fasta
 
