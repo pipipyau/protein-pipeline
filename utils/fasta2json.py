@@ -225,7 +225,7 @@ def process_folder(input_folder: str) -> None:
     """
     for root, _, files in os.walk(input_folder):
         for file in files:
-            if file.endswith(".fasta"):
+            if file.endswith(".fasta") or file.endswith(".FASTA"):
                 fasta_file = os.path.join(root, file)
                 fasta_to_json(fasta_file)
 
@@ -242,6 +242,8 @@ if __name__ == "__main__":
         process_folder(input_path)
         print(f"Conversion completed for all .fasta files. Output folder: {input_path}")
     elif input_path.endswith(".fasta"):
+        fasta_to_json(input_path)
+    elif input_path.endswith(".FASTA"):
         fasta_to_json(input_path)
     else:
         print(f"Invalid input path: {input_path}")
