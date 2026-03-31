@@ -2,4 +2,9 @@ data
 models
 af_public_databases
 .env
+<<<<<<< HEAD
 *-data
+=======
+input
+output
+>>>>>>> 8431d46c2e8d53765b010af9226adad9340b6e01

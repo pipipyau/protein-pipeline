@@ -10,6 +10,15 @@ This pipeline combines RFdiffusion for protein design with MEGADOCK for protein 
   - [Table of Contents](#table-of-contents)
   - [How to start](#how-to-start)
   - [Pipeline Overview](#pipeline-overview)
+  - [Описание шагов пайплайна](#описание-шагов-пайплайна)
+    - [Шаг 1 — Запуск контейнеров](#шаг-1--запуск-контейнеров)
+    - [Шаг 2 — Конвертация FASTA → JSON (`fasta2json`)](#шаг-2--конвертация-fasta--json-fasta2json)
+    - [Шаг 3 — Структурное моделирование AlphaFold3](#шаг-3--структурное-моделирование-alphafold3)
+    - [Шаг 4 — Конвертация CIF → PDB (`cif2pdb`)](#шаг-4--конвертация-cif--pdb-cif2pdb)
+    - [Шаг 5 — Молекулярный докинг Megadock](#шаг-5--молекулярный-докинг-megadock)
+    - [Шаг 6 — Расчёт аффинности связывания Prodigy](#шаг-6--расчёт-аффинности-связывания-prodigy)
+    - [Шаг 7 — Экспорт результатов в CSV](#шаг-7--экспорт-результатов-в-csv)
+    - [Шаг 8 — Остановка контейнеров](#шаг-8--остановка-контейнеров)
   - [Настройка модулей](#настройка-модулей)
     - [1. AlphaFold3](#1-alphafold3)
       - [Распаковка весов](#распаковка-весов)
@@ -42,6 +51,35 @@ graph TD
     C -->|txt| D[Export to csv]
     D -->|results.csv| End[Output]
 ```
+
+## Описание шагов пайплайна
+Шаги в скрипте start.sh.
+
+### Шаг 1 — Запуск контейнеров
+Запускаются Docker-контейнеры через `docker-compose up -d`. Используются три контейнера: `alphafold3_container`, `megadock_container`, `prodigy_container`. После запуска скрипт ожидает 10 секунд для завершения инициализации.
+
+### Шаг 2 — Конвертация FASTA → JSON (`fasta2json`)
+Скрипт `utils/fasta2json.py` обходит папку `data/input` и конвертирует все `.fasta`-файлы в формат `.json`, который принимает AlphaFold3. Входные файлы для лиганда и рецептора размещаются раздельно в `data/input/ligand` и `data/input/receptor`.
+
+### Шаг 3 — Структурное моделирование AlphaFold3
+AlphaFold3 запускается последовательно для лиганда и рецептора. Используется режим Jackhmmer/nhmmer для поиска MSA (множественного выравнивания последовательностей) по сегментированным базам данных (BFD, RNAcentral, Rfam), что ускоряет поиск на нескольких дисках. Результаты (`.cif`-файлы) сохраняются в `data/output/alphafold3/ligand` и `data/output/alphafold3/receptor`.
+
+### Шаг 4 — Конвертация CIF → PDB (`cif2pdb`)
+Скрипт `utils/cif2pdb.py` конвертирует все `.cif`-файлы из папки `data/output/alphafold3` в формат `.pdb`, необходимый для Megadock.
+
+### Шаг 5 — Молекулярный докинг Megadock
+Внутри контейнера `megadock_container` выполняется скрипт `run_multi_megadock.sh`. Megadock перебирает все пары лиганд–рецептор и рассчитывает комплексы. Результаты (`.pdb`) сохраняются в `data/output/megadock`.
+
+### Шаг 6 — Расчёт аффинности связывания Prodigy
+Контейнер `prodigy_container` запускает `run_prodigy.sh` для каждого докинг-комплекса и оценивает энергию взаимодействия (ΔG, Kd) методом PRODIGY. Результаты в формате `.txt` сохраняются в `data/output/prodigy`.
+
+### Шаг 7 — Экспорт результатов в CSV
+Скрипт `analyze.py` внутри контейнера Prodigy парсит все `.txt`-файлы и агрегирует данные в итоговый файл `data/output/prodigy/affinity.csv`.
+
+### Шаг 8 — Остановка контейнеров
+После завершения всех шагов выполняется `docker-compose down` для корректной остановки всех контейнеров.
+
+---
 
 ## Настройка модулей
 
@@ -93,6 +131,8 @@ graph TD
 
 .\zstd.exe -d Z:\distr\AF-RFD-Pipeline\AF3\public_databases\uniref90_2022_05.fa.zst -o F:\AF-RFD\public_databases\uniref90_2022_05.fa
 ```
+
+Так же для ускорения можно воспользоваться скриптом [`abcfold/scripts/add_mmseqs_msa.py`](https://github.com/rigdenlab/ABCFold/blob/f300d3cc47fc92f8b6ee2db52b42d600b6d17566/README.md?plain=1#L234) из репозитория [ABCFold](https://github.com/rigdenlab/ABCFold).
 
 ### 2. Protein Docking with MEGADOCK
 
