@@ -57,6 +57,7 @@ echo "Alphafold3 for ligand..."
 # docker exec alphafold3_container python run_alphafold.py --input_dir=/root/af_input/ligand --model_dir=/root/models --output_dir=/root/af_output/ligand
 # Jackhmmer version of Alphafold3
 docker exec alphafold3_container python run_alphafold.py `
+--num_diffusion_samples=25 `
     --input_dir=/root/af_input/ligand --model_dir=/root/models --output_dir=/root/af_output/ligand `
     --small_bfd_database_path="/root/public_databases_1/bfd-first_non_consensus_sequences.fasta@64" `
     --small_bfd_z_value=65984053 `
@@ -77,6 +78,7 @@ echo "Alphafold3 for receptor..."
 # docker exec alphafold3_container python run_alphafold.py --input_dir=/root/af_input/receptor --model_dir=/root/models --output_dir=/root/af_output/receptor
 # Jackhmmer version of Alphafold3
 docker exec alphafold3_container python run_alphafold.py `
+    --num_diffusion_samples=25 `
     --input_dir=/root/af_input/receptor --model_dir=/root/models --output_dir=/root/af_output/receptor `
     --small_bfd_database_path="/root/public_databases_1/bfd-first_non_consensus_sequences.fasta@64" `
     --small_bfd_z_value=65984053 `
