@@ -13,6 +13,12 @@ find "$RECEPTOR_DIR" -name "*_sample*.pdb" -type f | while IFS= read -r receptor
         ligand=$(basename "$ligand_file" .pdb)
 
         PAIR_DIR="${OUTPUT_DIR}/${receptor}-${ligand}"
+
+        if [ -f "${PAIR_DIR}/${receptor}-${ligand}-complex.pdb" ]; then
+            echo "Skipping ${receptor}-${ligand}: complex already exists"
+            continue
+        fi
+
         mkdir -p "$PAIR_DIR"
         cd "$PAIR_DIR" || exit 1
 
